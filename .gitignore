@@ -59,6 +59,13 @@ desktop.ini
 *.swo
 *~
 
+
+# ============================================================
+# SKILLS
+# ============================================================
+.agents/
+.claude/
+
 # ============================================================
 # LOGS & TEMP
 # ============================================================
@@ -66,3 +73,9 @@ desktop.ini
 logs/
 tmp/
 temp/
+skills-lock.json
+QUICKSTART.md
+.claude/settings.local.json
+webDAO/ARCHITECTURE.md
+webDAO/README.md
+webDAO/SETUP.md

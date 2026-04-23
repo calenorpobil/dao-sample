@@ -6,7 +6,9 @@
       "Bash(forge --version)",
       "Bash(npm --version)",
       "Bash(rm -rf node_modules package-lock.json .next)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(forge build *)",
+      "Bash(npm run *)"
     ]
   }
 }
