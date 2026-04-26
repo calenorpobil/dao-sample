@@ -1,8 +1,8 @@
-// Must match DAOVoting.sol: enum VoteType { ABSTAIN, FOR, AGAINST }
+// Must match DAOVoting.sol: enum VoteType { FOR, AGAINST, ABSTAIN }
 export enum VoteType {
-  ABSTAIN = 0,
-  FOR = 1,
-  AGAINST = 2,
+  FOR = 0,
+  AGAINST = 1,
+  ABSTAIN = 2,
 }
 
 export enum ProposalState {

@@ -30,7 +30,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const provider = new JsonRpcProvider(RPC_URL);
+    const chainId = Number(process.env.NEXT_PUBLIC_CHAIN_ID || "31337");
+    const provider = new JsonRpcProvider(RPC_URL, chainId, { staticNetwork: true });
     const relayer = new Wallet(RELAYER_PRIVATE_KEY, provider);
     const forwarder = new Contract(FORWARDER_ADDRESS, FORWARDER_ABI, relayer);
 

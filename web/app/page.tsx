@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { formatEther } from "ethers";
 import { useWallet } from "@/lib/useWallet";
 import { getDAOContract, getReadProvider } from "@/lib/contracts";
@@ -16,23 +16,14 @@ export default function Home() {
   const [canCreate, setCanCreate] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
 
-  useEffect(() => {
-    if (wallet.isConnected && wallet.address) {
-      loadBalances();
-      const interval = setInterval(loadBalances, 5000);
-      return () => clearInterval(interval);
-    }
-    return undefined;
-  }, [wallet.isConnected, wallet.address]);
-
-  const loadBalances = async () => {
+  const loadBalances = useCallback(async () => {
     if (!wallet.address) return;
 
     try {
       const daoContract = getDAOContract(getReadProvider()) as any;
 
       const user = await daoContract.getUserBalance(wallet.address);
-      const total = await daoContract.getTotalDeposited();
+      const total = await daoContract.totalDeposited();
 
       setUserBalance(user.toString());
       setTotalBalance(total.toString());
@@ -42,7 +33,16 @@ export default function Home() {
     } catch (err) {
       console.error("Failed to load balances:", err);
     }
-  };
+  }, [wallet.address]);
+
+  useEffect(() => {
+    if (wallet.isConnected && wallet.address) {
+      loadBalances();
+      const interval = setInterval(loadBalances, 5000);
+      return () => clearInterval(interval);
+    }
+    return undefined;
+  }, [wallet.isConnected, wallet.address, loadBalances]);
 
   return (
     <div className="space-y-8">
@@ -94,8 +94,6 @@ export default function Home() {
           {/* Fund DAO Section */}
           <section>
             <FundingPanel
-userBalance={userBalance}
-              totalBalance={totalBalance}
               onSuccess={() => {
                 setRefreshKey((k) => k + 1);
                 loadBalances();

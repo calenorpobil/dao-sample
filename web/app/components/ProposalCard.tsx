@@ -21,6 +21,9 @@ export function ProposalCard({
   const forPercentage = totalVotes > 0 ? (proposal.forVotes / totalVotes) * 100 : 0;
   const againstPercentage = totalVotes > 0 ? (proposal.againstVotes / totalVotes) * 100 : 0;
 
+  const deadlineDate = new Date(proposal.deadline * 1000);
+  const formattedDeadline = deadlineDate.toLocaleString();
+
   return (
     <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 space-y-4">
       <div className="flex justify-between items-start">
@@ -29,14 +32,22 @@ export function ProposalCard({
           <p className="text-gray-400 text-sm">
             to: <span className="font-mono">{proposal.recipient.slice(0, 10)}...</span>
           </p>
+          <p className="text-gray-500 text-xs mt-1">
+            Deadline: {formattedDeadline}
+          </p>
         </div>
         <div className="text-right">
           <p className="text-2xl font-bold text-green-400">
             {formatEther(proposal.amount)} ETH
           </p>
-          <p className={`text-sm ${isActive ? "text-yellow-400" : "text-gray-400"}`}>
-            {isActive ? "Active" : "Closed"}
-          </p>
+          <div className="flex flex-col gap-1 items-end mt-2">
+            <p className={`text-sm font-medium ${isActive ? "text-yellow-400" : "text-gray-400"}`}>
+              {isActive ? "🔵 Active" : "⚪ Closed"}
+            </p>
+            {proposal.executed && (
+              <p className="text-sm text-green-400 font-medium">✓ Executed</p>
+            )}
+          </div>
         </div>
       </div>
 
@@ -68,10 +79,6 @@ export function ProposalCard({
 
       {isActive && (
         <VoteButtons userVote={userVote} onVote={onVote} />
-      )}
-
-      {proposal.executed && (
-        <p className="text-green-400 text-sm">✓ Executed</p>
       )}
     </div>
   );

@@ -132,9 +132,9 @@ contract MinimalForwarderTest is Test {
         vm.deal(proposer, 10 ether);
 
         vm.prank(signer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(proposer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(proposer);
         uint256 proposalId = dao.createProposal(makeAddr("recipient"), 1 ether, 7 days, "gasless vote");
 
@@ -155,9 +155,9 @@ contract MinimalForwarderTest is Test {
         vm.deal(proposer, 10 ether);
 
         vm.prank(signer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(proposer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(proposer);
         uint256 proposalId = dao.createProposal(makeAddr("recipient"), 1 ether, 7 days, "sender test");
 
@@ -177,9 +177,9 @@ contract MinimalForwarderTest is Test {
         vm.deal(proposer, 10 ether);
 
         vm.prank(signer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(proposer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(proposer);
         uint256 proposalId = dao.createProposal(makeAddr("recipient"), 1 ether, 7 days, "against test");
 

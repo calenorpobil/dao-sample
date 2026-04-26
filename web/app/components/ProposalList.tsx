@@ -40,22 +40,22 @@ export function ProposalList({ userAddress }: ProposalListProps) {
         const proposal = await daoContract.getProposal(i);
         const voted = await daoContract.hasVoted(i, userAddress);
 
-        // getProposal returns: [0]id [1]recipient [2]amount [3]votingDeadline
-        //   [4]executionDelay [5]executed [6]forVotes [7]againstVotes [8]abstainVotes [9]description
         loadedProposals.push({
           id: i,
-          recipient: proposal[1],
-          amount: proposal[2].toString(),
-          deadline: Number(proposal[3]),
-          forVotes: Number(proposal[6]),
-          againstVotes: Number(proposal[7]),
-          abstainVotes: Number(proposal[8]),
-          executed: proposal[5],
+          recipient: proposal.recipient,
+          amount: proposal.amount.toString(),
+          deadline: Number(proposal.votingDeadline),
+          forVotes: Number(proposal.forVotes),
+          againstVotes: Number(proposal.againstVotes),
+          abstainVotes: Number(proposal.abstainVotes),
+          executed: proposal.executed,
         });
 
         if (voted) {
-          const vote = await daoContract.getUserVote(i, userAddress);
-          votes.set(i, Number(vote) as VoteType);
+          const vote = await daoContract.votes(i, userAddress);
+          const voteValue = typeof vote === 'bigint' ? Number(vote) : vote;
+          console.log(`Proposal ${i}: vote value = ${voteValue}, VoteType = ${Object.keys(VoteType)[voteValue]}`);
+          votes.set(i, voteValue as VoteType);
         }
       }
 
@@ -82,11 +82,18 @@ export function ProposalList({ userAddress }: ProposalListProps) {
       const forwarderContract = getForwarderContract(getReadProvider());
       const nonce = await forwarderContract.getNonce(userAddress);
 
+      const userVote = userVotes.get(proposalId);
+      const hasAlreadyVoted = userVote !== undefined && userVote !== null;
+
       const iface = new Interface([
-        "function vote(uint256 proposalId, uint8 voteType)",
+        hasAlreadyVoted
+          ? "function changeVote(uint256 proposalId, uint8 newVoteType)"
+          : "function vote(uint256 proposalId, uint8 voteType)",
       ]);
 
-      const data = iface.encodeFunctionData("vote", [proposalId, voteType]);
+      const data = hasAlreadyVoted
+        ? iface.encodeFunctionData("changeVote", [proposalId, voteType])
+        : iface.encodeFunctionData("vote", [proposalId, voteType]);
 
       const metaTx = {
         from: userAddress,

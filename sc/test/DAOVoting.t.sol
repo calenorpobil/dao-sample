@@ -28,21 +28,21 @@ contract DAOVotingTest is Test {
 
     // --- deposit ---
 
-    function test_deposit() public {
+    function test_fundDAO() public {
         vm.prank(alice);
-        dao.deposit{value: DEPOSIT}();
+        dao.fundDAO{value: DEPOSIT}();
 
         assertEq(dao.balances(alice), DEPOSIT);
         assertEq(dao.totalDeposited(), DEPOSIT);
     }
 
-    function test_deposit_revert_zero() public {
+    function test_fundDAO_revert_zero() public {
         vm.prank(alice);
         vm.expectRevert("DAOVoting: must send ETH");
-        dao.deposit{value: 0}();
+        dao.fundDAO{value: 0}();
     }
 
-    function test_deposit_via_receive() public {
+    function test_fundDAO_via_receive() public {
         vm.prank(alice);
         (bool ok,) = address(dao).call{value: DEPOSIT}("");
         assertTrue(ok);
@@ -53,7 +53,7 @@ contract DAOVotingTest is Test {
 
     function test_withdraw() public {
         vm.startPrank(alice);
-        dao.deposit{value: DEPOSIT}();
+        dao.fundDAO{value: DEPOSIT}();
         uint256 balanceBefore = alice.balance;
         dao.withdraw(DEPOSIT);
         vm.stopPrank();
@@ -72,11 +72,11 @@ contract DAOVotingTest is Test {
 
     function _setupDeposits() internal {
         vm.prank(alice);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(bob);
-        dao.deposit{value: 3 ether}();
+        dao.fundDAO{value: 3 ether}();
         vm.prank(carol);
-        dao.deposit{value: 2 ether}();
+        dao.fundDAO{value: 2 ether}();
     }
 
     function test_createProposal() public {
@@ -94,10 +94,10 @@ contract DAOVotingTest is Test {
 
     function test_createProposal_revert_threshold() public {
         vm.prank(alice);
-        dao.deposit{value: 0.1 ether}();
+        dao.fundDAO{value: 0.1 ether}();
 
         vm.prank(bob);
-        dao.deposit{value: 10 ether}();
+        dao.fundDAO{value: 10 ether}();
 
         vm.prank(alice);
         vm.expectRevert("DAOVoting: insufficient balance to propose");
@@ -324,7 +324,7 @@ contract DAOVotingTest is Test {
 
     function test_vote_nonexistent_proposal() public {
         vm.prank(alice);
-        dao.deposit{value: 1 ether}();
+        dao.fundDAO{value: 1 ether}();
 
         vm.prank(alice);
         vm.expectRevert("DAOVoting: proposal does not exist");
@@ -459,9 +459,9 @@ contract DAOVotingTest is Test {
         vm.deal(signer, 10 ether);
 
         vm.prank(signer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(alice);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(alice);
         uint256 id = dao.createProposal(recipient, 1 ether, VOTING_DURATION, "gasless test");
 
@@ -480,9 +480,9 @@ contract DAOVotingTest is Test {
         vm.deal(signer, 10 ether);
 
         vm.prank(signer);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(alice);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(alice);
         uint256 id = dao.createProposal(recipient, 1 ether, VOTING_DURATION, "replay test");
 
@@ -510,13 +510,13 @@ contract DAOVotingTest is Test {
 
         // Step 1: User A deposits 10 ETH
         vm.prank(userA);
-        dao.deposit{value: 10 ether}();
+        dao.fundDAO{value: 10 ether}();
         assertEq(dao.balances(userA), 10 ether);
         assertEq(dao.totalDeposited(), 10 ether);
 
         // Step 2: User B deposits 1 ETH (will have <10% for proposal creation)
         vm.prank(userB);
-        dao.deposit{value: 1 ether}();
+        dao.fundDAO{value: 1 ether}();
         assertEq(dao.balances(userB), 1 ether);
         assertEq(dao.totalDeposited(), 11 ether);
 
@@ -549,7 +549,7 @@ contract DAOVotingTest is Test {
 
         // Step 7: User C deposits 20 ETH
         vm.prank(userC);
-        dao.deposit{value: 20 ether}();
+        dao.fundDAO{value: 20 ether}();
         assertEq(dao.balances(userC), 20 ether);
         assertEq(dao.totalDeposited(), 31 ether);
 
@@ -588,11 +588,11 @@ contract DAOVotingTest is Test {
         vm.deal(signer2, 10 ether);
 
         vm.prank(signer1);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(signer2);
-        dao.deposit{value: 5 ether}();
+        dao.fundDAO{value: 5 ether}();
         vm.prank(alice);
-        dao.deposit{value: 2 ether}();
+        dao.fundDAO{value: 2 ether}();
         vm.prank(alice);
         uint256 id = dao.createProposal(recipient, 1 ether, VOTING_DURATION, "multi gasless");
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BrowserProvider, parseEther } from "ethers";
+import { BrowserProvider, parseEther, isAddress } from "ethers";
 import { getDAOContract } from "@/lib/contracts";
 
 interface CreateProposalProps {
@@ -24,6 +24,11 @@ export function CreateProposal({ onSuccess, canCreate }: CreateProposalProps) {
       return;
     }
 
+    if (!isAddress(recipient)) {
+      setError("Invalid recipient address (use 0x... format)");
+      return;
+    }
+
     if (!canCreate) {
       setError("Insufficient balance to create proposal (need 10% of DAO total)");
       return;
@@ -36,7 +41,9 @@ export function CreateProposal({ onSuccess, canCreate }: CreateProposalProps) {
     try {
       if (!window.ethereum) throw new Error("MetaMask not found");
 
-      const provider = new BrowserProvider(window.ethereum);
+      const provider = new BrowserProvider(window.ethereum, undefined, {
+        polling: true,
+      });
       const signer = await provider.getSigner();
       const daoContract = getDAOContract(provider).connect(signer) as any;
 

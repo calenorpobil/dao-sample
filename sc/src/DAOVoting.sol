@@ -22,7 +22,7 @@ contract DAOVoting is ERC2771Context {
     }
 
     uint256 public constant MINIMUM_BALANCE = 0.1 ether;
-    uint256 public constant EXECUTION_DELAY = 1 days;
+    uint256 public constant EXECUTION_DELAY = 20 seconds;
     uint256 public constant PROPOSAL_THRESHOLD_BPS = 1000; // 10% en basis points
 
     uint256 public proposalCount;
@@ -45,7 +45,7 @@ contract DAOVoting is ERC2771Context {
         _deposit();
     }
 
-    function deposit() external payable {
+    function fundDAO() external payable {
         _deposit();
     }
 
@@ -146,6 +146,7 @@ contract DAOVoting is ERC2771Context {
         require(address(this).balance >= proposal.amount, "DAOVoting: insufficient treasury");
 
         proposal.executed = true;
+        totalDeposited -= proposal.amount;  // ← AGREGAR ESTA LÍNEA
 
         (bool ok,) = proposal.recipient.call{value: proposal.amount}("");
         require(ok, "DAOVoting: transfer failed");

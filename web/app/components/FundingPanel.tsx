@@ -1,24 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { BrowserProvider, parseEther, formatEther } from "ethers";
-import { getDAOContract } from "@/lib/contracts";
+import { getDAOContract, getReadProvider } from "@/lib/contracts";
+import { useWallet } from "@/lib/useWallet";
 
 interface FundingPanelProps {
-  userBalance: string;
-  totalBalance: string;
   onSuccess: () => void;
 }
 
-export function FundingPanel({
-  userBalance,
-  totalBalance,
-  onSuccess,
-}: FundingPanelProps) {
+export function FundingPanel({ onSuccess }: FundingPanelProps) {
+  const { wallet } = useWallet();
   const [amount, setAmount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [txHash, setTxHash] = useState<string | null>(null);
+  const [userBalance, setUserBalance] = useState("0");
+  const [totalBalance, setTotalBalance] = useState("0");
+
+  const refreshBalances = useCallback(async () => {
+    if (!wallet.address) {
+      setUserBalance("0");
+      setTotalBalance("0");
+      return;
+    }
+    try {
+      const daoContract = getDAOContract(getReadProvider()) as any;
+      const [user, total] = await Promise.all([
+        daoContract.getUserBalance(wallet.address),
+        daoContract.totalDeposited(),
+      ]);
+      setUserBalance(user.toString());
+      setTotalBalance(total.toString());
+    } catch (err) {
+      console.error("FundingPanel: failed to load balances", err);
+    }
+  }, [wallet.address]);
+
+  useEffect(() => {
+    refreshBalances();
+    if (!wallet.address) return undefined;
+    const interval = setInterval(refreshBalances, 5000);
+    return () => clearInterval(interval);
+  }, [wallet.address, refreshBalances]);
 
   const handleFund = async () => {
     if (!amount || parseFloat(amount) <= 0) {
@@ -37,13 +61,14 @@ export function FundingPanel({
       const signer = await provider.getSigner();
       const daoContract = getDAOContract(provider).connect(signer) as any;
 
-      const tx = await daoContract.deposit({
+      const tx = await daoContract.fundDAO({
         value: parseEther(amount),
       });
 
       setTxHash(tx.hash);
       await tx.wait();
       setAmount("");
+      await refreshBalances();
       onSuccess();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Transaction failed");

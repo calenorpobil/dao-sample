@@ -1,0 +1,1364 @@
+﻿{
+    "abi":  [
+                {
+                    "type":  "constructor",
+                    "inputs":  [
+                                   {
+                                       "name":  "trustedForwarder",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   }
+                               ],
+                    "stateMutability":  "nonpayable"
+                },
+                {
+                    "type":  "receive",
+                    "stateMutability":  "payable"
+                },
+                {
+                    "type":  "function",
+                    "name":  "EXECUTION_DELAY",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "MINIMUM_BALANCE",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "PROPOSAL_THRESHOLD_BPS",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "balances",
+                    "inputs":  [
+                                   {
+                                       "name":  "",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "canExecute",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "bool",
+                                        "internalType":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "changeVote",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "newVoteType",
+                                       "type":  "uint8",
+                                       "internalType":  "enum DAOVoting.VoteType"
+                                   }
+                               ],
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable"
+                },
+                {
+                    "type":  "function",
+                    "name":  "createProposal",
+                    "inputs":  [
+                                   {
+                                       "name":  "recipient",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "amount",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "votingDuration",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "description",
+                                       "type":  "string",
+                                       "internalType":  "string"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "nonpayable"
+                },
+                {
+                    "type":  "function",
+                    "name": "fundDAO",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "payable"
+                },
+                {
+                    "type":  "function",
+                    "name":  "executeProposal",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable"
+                },
+                {
+                    "type":  "function",
+                    "name":  "getProposal",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "tuple",
+                                        "internalType":  "struct DAOVoting.Proposal",
+                                        "components":  [
+                                                           {
+                                                               "name":  "id",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "recipient",
+                                                               "type":  "address",
+                                                               "internalType":  "address"
+                                                           },
+                                                           {
+                                                               "name":  "amount",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "description",
+                                                               "type":  "string",
+                                                               "internalType":  "string"
+                                                           },
+                                                           {
+                                                               "name":  "votingDeadline",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "executionDelay",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "forVotes",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "againstVotes",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "abstainVotes",
+                                                               "type":  "uint256",
+                                                               "internalType":  "uint256"
+                                                           },
+                                                           {
+                                                               "name":  "executed",
+                                                               "type":  "bool",
+                                                               "internalType":  "bool"
+                                                           }
+                                                       ]
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "getProposalState",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint8",
+                                        "internalType":  "enum DAOVoting.ProposalState"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "getUserBalance",
+                    "inputs":  [
+                                   {
+                                       "name":  "user",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "hasVoted",
+                    "inputs":  [
+                                   {
+                                       "name":  "",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "bool",
+                                        "internalType":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "isTrustedForwarder",
+                    "inputs":  [
+                                   {
+                                       "name":  "forwarder",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "bool",
+                                        "internalType":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "proposalCount",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "proposals",
+                    "inputs":  [
+                                   {
+                                       "name":  "",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "id",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "recipient",
+                                        "type":  "address",
+                                        "internalType":  "address"
+                                    },
+                                    {
+                                        "name":  "amount",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "description",
+                                        "type":  "string",
+                                        "internalType":  "string"
+                                    },
+                                    {
+                                        "name":  "votingDeadline",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "executionDelay",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "forVotes",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "againstVotes",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "abstainVotes",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    },
+                                    {
+                                        "name":  "executed",
+                                        "type":  "bool",
+                                        "internalType":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "totalDeposited",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint256",
+                                        "internalType":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "trustedForwarder",
+                    "inputs":  [
+
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "address",
+                                        "internalType":  "address"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "vote",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "voteType",
+                                       "type":  "uint8",
+                                       "internalType":  "enum DAOVoting.VoteType"
+                                   }
+                               ],
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable"
+                },
+                {
+                    "type":  "function",
+                    "name":  "votes",
+                    "inputs":  [
+                                   {
+                                       "name":  "",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "",
+                                       "type":  "address",
+                                       "internalType":  "address"
+                                   }
+                               ],
+                    "outputs":  [
+                                    {
+                                        "name":  "",
+                                        "type":  "uint8",
+                                        "internalType":  "enum DAOVoting.VoteType"
+                                    }
+                                ],
+                    "stateMutability":  "view"
+                },
+                {
+                    "type":  "function",
+                    "name":  "withdraw",
+                    "inputs":  [
+                                   {
+                                       "name":  "amount",
+                                       "type":  "uint256",
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable"
+                },
+                {
+                    "type":  "event",
+                    "name":  "Deposited",
+                    "inputs":  [
+                                   {
+                                       "name":  "user",
+                                       "type":  "address",
+                                       "indexed":  true,
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "amount",
+                                       "type":  "uint256",
+                                       "indexed":  false,
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "anonymous":  false
+                },
+                {
+                    "type":  "event",
+                    "name":  "ProposalCreated",
+                    "inputs":  [
+                                   {
+                                       "name":  "id",
+                                       "type":  "uint256",
+                                       "indexed":  true,
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "proposer",
+                                       "type":  "address",
+                                       "indexed":  true,
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "recipient",
+                                       "type":  "address",
+                                       "indexed":  false,
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "amount",
+                                       "type":  "uint256",
+                                       "indexed":  false,
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "description",
+                                       "type":  "string",
+                                       "indexed":  false,
+                                       "internalType":  "string"
+                                   }
+                               ],
+                    "anonymous":  false
+                },
+                {
+                    "type":  "event",
+                    "name":  "ProposalExecuted",
+                    "inputs":  [
+                                   {
+                                       "name":  "id",
+                                       "type":  "uint256",
+                                       "indexed":  true,
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "recipient",
+                                       "type":  "address",
+                                       "indexed":  false,
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "amount",
+                                       "type":  "uint256",
+                                       "indexed":  false,
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "anonymous":  false
+                },
+                {
+                    "type":  "event",
+                    "name":  "Voted",
+                    "inputs":  [
+                                   {
+                                       "name":  "proposalId",
+                                       "type":  "uint256",
+                                       "indexed":  true,
+                                       "internalType":  "uint256"
+                                   },
+                                   {
+                                       "name":  "voter",
+                                       "type":  "address",
+                                       "indexed":  true,
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "voteType",
+                                       "type":  "uint8",
+                                       "indexed":  false,
+                                       "internalType":  "enum DAOVoting.VoteType"
+                                   }
+                               ],
+                    "anonymous":  false
+                },
+                {
+                    "type":  "event",
+                    "name":  "Withdrawn",
+                    "inputs":  [
+                                   {
+                                       "name":  "user",
+                                       "type":  "address",
+                                       "indexed":  true,
+                                       "internalType":  "address"
+                                   },
+                                   {
+                                       "name":  "amount",
+                                       "type":  "uint256",
+                                       "indexed":  false,
+                                       "internalType":  "uint256"
+                                   }
+                               ],
+                    "anonymous":  false
+                }
+            ],
+    "bytecode":  {
+                     "object":  "0x60a060405234801561000f575f5ffd5b506040516131bc3803806131bc833981810160405281019061003191906100cb565b808073ffffffffffffffffffffffffffffffffffffffff1660808173ffffffffffffffffffffffffffffffffffffffff168152505050506100f6565b5f5ffd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61009a82610071565b9050919050565b6100aa81610090565b81146100b4575f5ffd5b50565b5f815190506100c5816100a1565b92915050565b5f602082840312156100e0576100df61006d565b5b5f6100ed848285016100b7565b91505092915050565b6080516130ae61010e5f395f610d4201526130ae5ff3fe60806040526004361061012d575f3560e01c80639080936f116100aa578063cc63604a1161006e578063cc63604a14610449578063d0e30db014610485578063d23254b41461048f578063da35c664146104cb578063f9a43b2d146104f5578063ff50abdc1461051d5761013c565b80639080936f14610343578063943e82161461037f578063a0a2bf67146103a7578063a7d54d3f146103e3578063c7f758a81461040d5761013c565b806343859632116100f1578063438596321461023b578063477348921461027757806353498cdd146102b3578063572b6c05146102dd5780637da0a877146103195761013c565b8063013cf08b146101405780630d61b5191461018557806327e235e3146101ad5780632e1a7d4d146101e957806337f135d7146102115761013c565b3661013c5761013a610547565b005b5f5ffd5b34801561014b575f5ffd5b5061016660048036038101906101619190611cd8565b610650565b60405161017c9a99989796959493929190611ddb565b60405180910390f35b348015610190575f5ffd5b506101ab60048036038101906101a69190611cd8565b610751565b005b3480156101b8575f5ffd5b506101d360048036038101906101ce9190611ea6565b610a78565b6040516101e09190611ed1565b60405180910390f35b3480156101f4575f5ffd5b5061020f600480360381019061020a9190611cd8565b610a8d565b005b34801561021c575f5ffd5b50610225610c7e565b6040516102329190611ed1565b60405180910390f35b348015610246575f5ffd5b50610261600480360381019061025c9190611eea565b610c85565b60405161026e9190611f28565b60405180910390f35b348015610282575f5ffd5b5061029d60048036038101906102989190611ea6565b610caf565b6040516102aa9190611ed1565b60405180910390f35b3480156102be575f5ffd5b506102c7610cf5565b6040516102d49190611ed1565b60405180910390f35b3480156102e8575f5ffd5b5061030360048036038101906102fe9190611ea6565b610d01565b6040516103109190611f28565b60405180910390f35b348015610324575f5ffd5b5061032d610d3f565b60405161033a9190611f41565b60405180910390f35b34801561034e575f5ffd5b5061036960048036038101906103649190611cd8565b610d66565b6040516103769190611fcd565b60405180910390f35b34801561038a575f5ffd5b506103a560048036038101906103a09190612009565b610e19565b005b3480156103b2575f5ffd5b506103cd60048036038101906103c891906120a8565b6111bf565b6040516103da9190611ed1565b60405180910390f35b3480156103ee575f5ffd5b506103f7611557565b6040516104049190611ed1565b60405180910390f35b348015610418575f5ffd5b50610433600480360381019061042e9190611cd8565b61155d565b6040516104409190612278565b60405180910390f35b348015610454575f5ffd5b5061046f600480360381019061046a9190611cd8565b6116cd565b60405161047c9190611f28565b60405180910390f35b61048d61175b565b005b34801561049a575f5ffd5b506104b560048036038101906104b09190611eea565b611765565b6040516104c291906122de565b60405180910390f35b3480156104d6575f5ffd5b506104df61178f565b6040516104ec9190611ed1565b60405180910390f35b348015610500575f5ffd5b5061051b60048036038101906105169190612009565b611794565b005b348015610528575f5ffd5b50610531611bbe565b60405161053e9190611ed1565b60405180910390f35b5f3411610589576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161058090612341565b60405180910390fd5b5f610592611bc4565b90503460035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8282546105e0919061238c565b925050819055503460015f8282546105f8919061238c565b925050819055508073ffffffffffffffffffffffffffffffffffffffff167f2da466a7b24304f47e87fa2e1e5a81b9831ce54fec19055ce277ca2f39ba42c4346040516106459190611ed1565b60405180910390a250565b6002602052805f5260405f205f91509050805f015490806001015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030180546106a0906123ec565b80601f01602080910402602001604051908101604052809291908181526020018280546106cc906123ec565b80156107175780601f106106ee57610100808354040283529160200191610717565b820191905f5260205f20905b8154815290600101906020018083116106fa57829003601f168201915b505050505090806004015490806005015490806006015490806007015490806008015490806009015f9054906101000a900460ff1690508a565b5f60025f8381526020019081526020015f2090505f815f0154036107aa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016107a19061248c565b60405180910390fd5b806009015f9054906101000a900460ff16156107fb576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016107f2906124f4565b60405180910390fd5b80600401544211610841576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108389061255c565b60405180910390fd5b806007015481600601541161088b576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610882906125c4565b60405180910390fd5b8060050154816004015461089f919061238c565b42116108e0576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108d790612652565b60405180910390fd5b8060020154471015610927576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161091e906126ba565b60405180910390fd5b6001816009015f6101000a81548160ff0219169083151502179055505f816001015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16826002015460405161098f90612705565b5f6040518083038185875af1925050503d805f81146109c9576040519150601f19603f3d011682016040523d82523d5f602084013e6109ce565b606091505b5050905080610a12576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610a0990612763565b60405180910390fd5b827f3b7c90df35b419337cff0919fe91849006607bb66c4373623f06f9d48c1ebb98836001015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff168460020154604051610a6b929190612781565b60405180910390a2505050565b6003602052805f5260405f205f915090505481565b5f610a96611bc4565b90508160035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20541015610b18576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610b0f906127f2565b60405180910390fd5b8160035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f828254610b649190612810565b925050819055508160015f828254610b7c9190612810565b925050819055505f8173ffffffffffffffffffffffffffffffffffffffff1683604051610ba890612705565b5f6040518083038185875af1925050503d805f8114610be2576040519150601f19603f3d011682016040523d82523d5f602084013e610be7565b606091505b5050905080610c2b576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610c2290612763565b60405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff167f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d584604051610c719190611ed1565b60405180910390a2505050565b6201518081565b6004602052815f5260405f20602052805f5260405f205f915091509054906101000a900460ff1681565b5f60035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20549050919050565b67016345785d8a000081565b5f610d0a610d3f565b73ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16149050919050565b5f7f0000000000000000000000000000000000000000000000000000000000000000905090565b5f5f60025f8481526020019081526020015f2090505f815f015403610dc0576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610db79061248c565b60405180910390fd5b806009015f9054906101000a900460ff1615610de0576003915050610e14565b80600401544211610df4575f915050610e14565b806007015481600601541115610e0e576001915050610e14565b60029150505b919050565b5f610e22611bc4565b90505f60025f8581526020019081526020015f2090505f815f015403610e7d576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610e749061248c565b60405180910390fd5b8060040154421115610ec4576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610ebb9061288d565b60405180910390fd5b67016345785d8a000060035f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20541015610f4c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610f439061291b565b60405180910390fd5b60045f8581526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff1615610fe5576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610fdc90612983565b60405180910390fd5b600160045f8681526020019081526020015f205f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff0219169083151502179055508260055f8681526020019081526020015f205f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff021916908360028111156110b7576110b6611f5a565b5b02179055505f60028111156110cf576110ce611f5a565b5b8360028111156110e2576110e1611f5a565b5b0361110557806006015f8154809291906110fb906129a1565b919050555061116a565b6001600281111561111957611118611f5a565b5b83600281111561112c5761112b611f5a565b5b0361114f57806007015f815480929190611145906129a1565b9190505550611169565b806008015f815480929190611163906129a1565b91905055505b5b8173ffffffffffffffffffffffffffffffffffffffff16847f094f80829c509370abb2d421a078ba5926755d3de25d021dacf7bbd19853f7a2856040516111b191906122de565b60405180910390a350505050565b5f5f6111c9611bc4565b90506103e86001546111db91906129e8565b61271060035f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205461122691906129e8565b1015611267576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161125e90612a99565b60405180910390fd5b854710156112aa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016112a1906126ba565b60405180910390fd5b5f85116112ec576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016112e390612b01565b60405180910390fd5b5f73ffffffffffffffffffffffffffffffffffffffff168773ffffffffffffffffffffffffffffffffffffffff160361135a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161135190612b69565b60405180910390fd5b5f5f5f8154611368906129a1565b91905081905590506040518061014001604052808281526020018973ffffffffffffffffffffffffffffffffffffffff16815260200188815260200186868080601f0160208091040260200160405190810160405280939291908181526020018383808284375f81840152601f19601f82011690508083019250505050505050815260200187426113f9919061238c565b81526020016201518081526020015f81526020015f81526020015f81526020015f151581525060025f8381526020019081526020015f205f820151815f01556020820151816001015f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060408201518160020155606082015181600301908161149d9190612d65565b506080820151816004015560a0820151816005015560c0820151816006015560e082015181600701556101008201518160080155610120820151816009015f6101000a81548160ff0219169083151502179055509050508173ffffffffffffffffffffffffffffffffffffffff16817f51820485866a12445a1d315205e4d28921833b1ed028aed01a8c0c26fa068d708a8a89896040516115419493929190612e6e565b60405180910390a3809250505095945050505050565b6103e881565b611565611c3b565b60025f8381526020019081526020015f20604051806101400160405290815f8201548152602001600182015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600282015481526020016003820180546115fa906123ec565b80601f0160208091040260200160405190810160405280929190818152602001828054611626906123ec565b80156116715780601f1061164857610100808354040283529160200191611671565b820191905f5260205f20905b81548152906001019060200180831161165457829003601f168201915b505050505081526020016004820154815260200160058201548152602001600682015481526020016007820154815260200160088201548152602001600982015f9054906101000a900460ff1615151515815250509050919050565b5f5f60025f8481526020019081526020015f2090505f815f0154141580156117035750806009015f9054906101000a900460ff16155b80156117125750806004015442115b8015611725575080600701548160060154115b8015611743575080600501548160040154611740919061238c565b42115b8015611753575080600201544710155b915050919050565b611763610547565b565b6005602052815f5260405f20602052805f5260405f205f915091509054906101000a900460ff1681565b5f5481565b5f61179d611bc4565b90505f60025f8581526020019081526020015f2090505f815f0154036117f8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016117ef9061248c565b60405180910390fd5b806004015442111561183f576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016118369061288d565b60405180910390fd5b60045f8581526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff166118d7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016118ce90612ef6565b60405180910390fd5b5f60055f8681526020019081526020015f205f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff16905083600281111561194657611945611f5a565b5b81600281111561195957611958611f5a565b5b03611999576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161199090612f5e565b60405180910390fd5b5f60028111156119ac576119ab611f5a565b5b8160028111156119bf576119be611f5a565b5b036119e257816006015f8154809291906119d890612f7c565b9190505550611a47565b600160028111156119f6576119f5611f5a565b5b816002811115611a0957611a08611f5a565b5b03611a2c57816007015f815480929190611a2290612f7c565b9190505550611a46565b816008015f815480929190611a4090612f7c565b91905055505b5b8360055f8781526020019081526020015f205f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff02191690836002811115611ab557611ab4611f5a565b5b02179055505f6002811115611acd57611acc611f5a565b5b846002811115611ae057611adf611f5a565b5b03611b0357816006015f815480929190611af9906129a1565b9190505550611b68565b60016002811115611b1757611b16611f5a565b5b846002811115611b2a57611b29611f5a565b5b03611b4d57816007015f815480929190611b43906129a1565b9190505550611b67565b816008015f815480929190611b61906129a1565b91905055505b5b8273ffffffffffffffffffffffffffffffffffffffff16857f094f80829c509370abb2d421a078ba5926755d3de25d021dacf7bbd19853f7a286604051611baf91906122de565b60405180910390a35050505050565b60015481565b5f5f5f36905090505f611bd5611c2c565b9050808210158015611bec5750611beb33610d01565b5b15611c1c575f36828403908092611c0593929190612fab565b90611c10919061301a565b60601c92505050611c29565b611c24611c34565b925050505b90565b5f6014905090565b5f33905090565b6040518061014001604052805f81526020015f73ffffffffffffffffffffffffffffffffffffffff1681526020015f8152602001606081526020015f81526020015f81526020015f81526020015f81526020015f81526020015f151581525090565b5f5ffd5b5f5ffd5b5f819050919050565b611cb781611ca5565b8114611cc1575f5ffd5b50565b5f81359050611cd281611cae565b92915050565b5f60208284031215611ced57611cec611c9d565b5b5f611cfa84828501611cc4565b91505092915050565b611d0c81611ca5565b82525050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f611d3b82611d12565b9050919050565b611d4b81611d31565b82525050565b5f81519050919050565b5f82825260208201905092915050565b8281835e5f83830152505050565b5f601f19601f8301169050919050565b5f611d9382611d51565b611d9d8185611d5b565b9350611dad818560208601611d6b565b611db681611d79565b840191505092915050565b5f8115159050919050565b611dd581611dc1565b82525050565b5f61014082019050611def5f83018d611d03565b611dfc602083018c611d42565b611e09604083018b611d03565b8181036060830152611e1b818a611d89565b9050611e2a6080830189611d03565b611e3760a0830188611d03565b611e4460c0830187611d03565b611e5160e0830186611d03565b611e5f610100830185611d03565b611e6d610120830184611dcc565b9b9a5050505050505050505050565b611e8581611d31565b8114611e8f575f5ffd5b50565b5f81359050611ea081611e7c565b92915050565b5f60208284031215611ebb57611eba611c9d565b5b5f611ec884828501611e92565b91505092915050565b5f602082019050611ee45f830184611d03565b92915050565b5f5f60408385031215611f0057611eff611c9d565b5b5f611f0d85828601611cc4565b9250506020611f1e85828601611e92565b9150509250929050565b5f602082019050611f3b5f830184611dcc565b92915050565b5f602082019050611f545f830184611d42565b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52602160045260245ffd5b60048110611f9857611f97611f5a565b5b50565b5f819050611fa882611f87565b919050565b5f611fb782611f9b565b9050919050565b611fc781611fad565b82525050565b5f602082019050611fe05f830184611fbe565b92915050565b60038110611ff2575f5ffd5b50565b5f8135905061200381611fe6565b92915050565b5f5f6040838503121561201f5761201e611c9d565b5b5f61202c85828601611cc4565b925050602061203d85828601611ff5565b9150509250929050565b5f5ffd5b5f5ffd5b5f5ffd5b5f5f83601f84011261206857612067612047565b5b8235905067ffffffffffffffff8111156120855761208461204b565b5b6020830191508360018202830111156120a1576120a061204f565b5b9250929050565b5f5f5f5f5f608086880312156120c1576120c0611c9d565b5b5f6120ce88828901611e92565b95505060206120df88828901611cc4565b94505060406120f088828901611cc4565b935050606086013567ffffffffffffffff81111561211157612110611ca1565b5b61211d88828901612053565b92509250509295509295909350565b61213581611ca5565b82525050565b61214481611d31565b82525050565b5f82825260208201905092915050565b5f61216482611d51565b61216e818561214a565b935061217e818560208601611d6b565b61218781611d79565b840191505092915050565b61219b81611dc1565b82525050565b5f61014083015f8301516121b75f86018261212c565b5060208301516121ca602086018261213b565b5060408301516121dd604086018261212c565b50606083015184820360608601526121f5828261215a565b915050608083015161220a608086018261212c565b5060a083015161221d60a086018261212c565b5060c083015161223060c086018261212c565b5060e083015161224360e086018261212c565b5061010083015161225861010086018261212c565b5061012083015161226d610120860182612192565b508091505092915050565b5f6020820190508181035f83015261229081846121a1565b905092915050565b600381106122a9576122a8611f5a565b5b50565b5f8190506122b982612298565b919050565b5f6122c8826122ac565b9050919050565b6122d8816122be565b82525050565b5f6020820190506122f15f8301846122cf565b92915050565b7f44414f566f74696e673a206d7573742073656e642045544800000000000000005f82015250565b5f61232b601883611d5b565b9150612336826122f7565b602082019050919050565b5f6020820190508181035f8301526123588161231f565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f61239682611ca5565b91506123a183611ca5565b92508282019050808211156123b9576123b861235f565b5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52602260045260245ffd5b5f600282049050600182168061240357607f821691505b602082108103612416576124156123bf565b5b50919050565b7f44414f566f74696e673a2070726f706f73616c20646f6573206e6f74206578695f8201527f7374000000000000000000000000000000000000000000000000000000000000602082015250565b5f612476602283611d5b565b91506124818261241c565b604082019050919050565b5f6020820190508181035f8301526124a38161246a565b9050919050565b7f44414f566f74696e673a20616c726561647920657865637574656400000000005f82015250565b5f6124de601b83611d5b565b91506124e9826124aa565b602082019050919050565b5f6020820190508181035f83015261250b816124d2565b9050919050565b7f44414f566f74696e673a20766f74696e67207374696c6c2061637469766500005f82015250565b5f612546601e83611d5b565b915061255182612512565b602082019050919050565b5f6020820190508181035f8301526125738161253a565b9050919050565b7f44414f566f74696e673a2070726f706f73616c206e6f7420617070726f7665645f82015250565b5f6125ae602083611d5b565b91506125b98261257a565b602082019050919050565b5f6020820190508181035f8301526125db816125a2565b9050919050565b7f44414f566f74696e673a20657865637574696f6e2064656c6179206e6f7420655f8201527f6c61707365640000000000000000000000000000000000000000000000000000602082015250565b5f61263c602683611d5b565b9150612647826125e2565b604082019050919050565b5f6020820190508181035f83015261266981612630565b9050919050565b7f44414f566f74696e673a20696e73756666696369656e742074726561737572795f82015250565b5f6126a4602083611d5b565b91506126af82612670565b602082019050919050565b5f6020820190508181035f8301526126d181612698565b9050919050565b5f81905092915050565b50565b5f6126f05f836126d8565b91506126fb826126e2565b5f82019050919050565b5f61270f826126e5565b9150819050919050565b7f44414f566f74696e673a207472616e73666572206661696c65640000000000005f82015250565b5f61274d601a83611d5b565b915061275882612719565b602082019050919050565b5f6020820190508181035f83015261277a81612741565b9050919050565b5f6040820190506127945f830185611d42565b6127a16020830184611d03565b9392505050565b7f44414f566f74696e673a20696e73756666696369656e742062616c616e6365005f82015250565b5f6127dc601f83611d5b565b91506127e7826127a8565b602082019050919050565b5f6020820190508181035f830152612809816127d0565b9050919050565b5f61281a82611ca5565b915061282583611ca5565b925082820390508181111561283d5761283c61235f565b5b92915050565b7f44414f566f74696e673a20766f74696e6720706572696f6420656e64656400005f82015250565b5f612877601e83611d5b565b915061288282612843565b602082019050919050565b5f6020820190508181035f8301526128a48161286b565b9050919050565b7f44414f566f74696e673a20696e73756666696369656e742062616c616e6365205f8201527f746f20766f746500000000000000000000000000000000000000000000000000602082015250565b5f612905602783611d5b565b9150612910826128ab565b604082019050919050565b5f6020820190508181035f830152612932816128f9565b9050919050565b7f44414f566f74696e673a20616c726561647920766f74656400000000000000005f82015250565b5f61296d601883611d5b565b915061297882612939565b602082019050919050565b5f6020820190508181035f83015261299a81612961565b9050919050565b5f6129ab82611ca5565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82036129dd576129dc61235f565b5b600182019050919050565b5f6129f282611ca5565b91506129fd83611ca5565b9250828202612a0b81611ca5565b91508282048414831517612a2257612a2161235f565b5b5092915050565b7f44414f566f74696e673a20696e73756666696369656e742062616c616e6365205f8201527f746f2070726f706f736500000000000000000000000000000000000000000000602082015250565b5f612a83602a83611d5b565b9150612a8e82612a29565b604082019050919050565b5f6020820190508181035f830152612ab081612a77565b9050919050565b7f44414f566f74696e673a20696e76616c6964206475726174696f6e00000000005f82015250565b5f612aeb601b83611d5b565b9150612af682612ab7565b602082019050919050565b5f6020820190508181035f830152612b1881612adf565b9050919050565b7f44414f566f74696e673a20696e76616c696420726563697069656e74000000005f82015250565b5f612b53601c83611d5b565b9150612b5e82612b1f565b602082019050919050565b5f6020820190508181035f830152612b8081612b47565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b5f819050815f5260205f209050919050565b5f6020601f8301049050919050565b5f82821b905092915050565b5f60088302612c107fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82612bd5565b612c1a8683612bd5565b95508019841693508086168417925050509392505050565b5f819050919050565b5f612c55612c50612c4b84611ca5565b612c32565b611ca5565b9050919050565b5f819050919050565b612c6e83612c3b565b612c82612c7a82612c5c565b848454612be1565b825550505050565b5f5f905090565b612c99612c8a565b612ca4818484612c65565b505050565b5f5b82811015612cca57612cbf5f828401612c91565b600181019050612cab565b505050565b601f821115612d1d5782821115612d1c57612ce981612bb4565b612cf283612bc6565b612cfb85612bc6565b6020861015612d08575f90505b808301612d1782840382612ca9565b505050505b5b505050565b5f82821c905092915050565b5f612d3d5f1984600802612d22565b1980831691505092915050565b5f612d558383612d2e565b9150826002028217905092915050565b612d6e82611d51565b67ffffffffffffffff811115612d8757612d86612b87565b5b612d9182546123ec565b612d9c828285612ccf565b5f60209050601f831160018114612dcd575f8415612dbb578287015190505b612dc58582612d4a565b865550612e2c565b601f198416612ddb86612bb4565b5f5b82811015612e0257848901518255600182019150602085019450602081019050612ddd565b86831015612e1f5784890151612e1b601f891682612d2e565b8355505b6001600288020188555050505b505050505050565b828183375f83830152505050565b5f612e4d8385611d5b565b9350612e5a838584612e34565b612e6383611d79565b840190509392505050565b5f606082019050612e815f830187611d42565b612e8e6020830186611d03565b8181036040830152612ea1818486612e42565b905095945050505050565b7f44414f566f74696e673a20686173206e6f7420766f74656400000000000000005f82015250565b5f612ee0601883611d5b565b9150612eeb82612eac565b602082019050919050565b5f6020820190508181035f830152612f0d81612ed4565b9050919050565b7f44414f566f74696e673a2073616d6520766f74650000000000000000000000005f82015250565b5f612f48601483611d5b565b9150612f5382612f14565b602082019050919050565b5f6020820190508181035f830152612f7581612f3c565b9050919050565b5f612f8682611ca5565b91505f8203612f9857612f9761235f565b5b600182039050919050565b5f5ffd5b5f5ffd5b5f5f85851115612fbe57612fbd612fa3565b5b83861115612fcf57612fce612fa7565b5b6001850283019150848603905094509492505050565b5f82905092915050565b5f7fffffffffffffffffffffffffffffffffffffffff00000000000000000000000082169050919050565b5f6130258383612fe5565b826130308135612fef565b925060148210156130705761306b7fffffffffffffffffffffffffffffffffffffffff00000000000000000000000083601403600802612bd5565b831692505b50509291505056fea26469706673582212201d27dacbc95f5ee33cff915aff3fa48c40a5535b2aa989eaea1892f63500981b64736f6c63430008210033",
+                     "sourceMap":  "119:7181:24:-:0;;;1488:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1541:16;1562:17:20;1542:37;;;;;;;;;;1493:93;1488:73:24;119:7181;;88:117:28;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:143::-;753:5;784:6;778:13;769:22;;800:33;827:5;800:33;:::i;:::-;696:143;;;;:::o;845:351::-;915:6;964:2;952:9;943:7;939:23;935:32;932:119;;;970:79;;:::i;:::-;932:119;1090:1;1115:64;1171:7;1162:6;1151:9;1147:22;1115:64;:::i;:::-;1105:74;;1061:128;845:351;;;;:::o;119:7181:24:-;;;;;;;;;;;;;",
+                     "linkReferences":  {
+
+                                        }
+                 },
+    "deployedBytecode":  {
+                             "object":  "0x60806040526004361061012d575f3560e01c80639080936f116100aa578063cc63604a1161006e578063cc63604a14610449578063d0e30db014610485578063d23254b41461048f578063da35c664146104cb578063f9a43b2d146104f5578063ff50abdc1461051d5761013c565b80639080936f14610343578063943e82161461037f578063a0a2bf67146103a7578063a7d54d3f146103e3578063c7f758a81461040d5761013c565b806343859632116100f1578063438596321461023b578063477348921461027757806353498cdd146102b3578063572b6c05146102dd5780637da0a877146103195761013c565b8063013cf08b146101405780630d61b5191461018557806327e235e3146101ad5780632e1a7d4d146101e957806337f135d7146102115761013c565b3661013c5761013a610547565b005b5f5ffd5b34801561014b575f5ffd5b5061016660048036038101906101619190611cd8565b610650565b60405161017c9a99989796959493929190611ddb565b60405180910390f35b348015610190575f5ffd5b506101ab60048036038101906101a69190611cd8565b610751565b005b3480156101b8575f5ffd5b506101d360048036038101906101ce9190611ea6565b610a78565b6040516101e09190611ed1565b60405180910390f35b3480156101f4575f5ffd5b5061020f600480360381019061020a9190611cd8565b610a8d565b005b34801561021c575f5ffd5b50610225610c7e565b6040516102329190611ed1565b60405180910390f35b348015610246575f5ffd5b50610261600480360381019061025c9190611eea565b610c85565b60405161026e9190611f28565b60405180910390f35b348015610282575f5ffd5b5061029d60048036038101906102989190611ea6565b610caf565b6040516102aa9190611ed1565b60405180910390f35b3480156102be575f5ffd5b506102c7610cf5565b6040516102d49190611ed1565b60405180910390f35b3480156102e8575f5ffd5b5061030360048036038101906102fe9190611ea6565b610d01565b6040516103109190611f28565b60405180910390f35b348015610324575f5ffd5b5061032d610d3f565b60405161033a9190611f41565b60405180910390f35b34801561034e575f5ffd5b5061036960048036038101906103649190611cd8565b610d66565b6040516103769190611fcd565b60405180910390f35b34801561038a575f5ffd5b506103a560048036038101906103a09190612009565b610e19565b005b3480156103b2575f5ffd5b506103cd60048036038101906103c891906120a8565b6111bf565b6040516103da9190611ed1565b60405180910390f35b3480156103ee575f5ffd5b506103f7611557565b6040516104049190611ed1565b60405180910390f35b348015610418575f5ffd5b50610433600480360381019061042e9190611cd8565b61155d565b6040516104409190612278565b60405180910390f35b348015610454575f5ffd5b5061046f600480360381019061046a9190611cd8565b6116cd565b60405161047c9190611f28565b60405180910390f35b61048d61175b565b005b34801561049a575f5ffd5b506104b560048036038101906104b09190611eea565b611765565b6040516104c291906122de565b60405180910390f35b3480156104d6575f5ffd5b506104df61178f565b6040516104ec9190611ed1565b60405180910390f35b348015610500575f5ffd5b5061051b60048036038101906105169190612009565b611794565b005b348015610528575f5ffd5b50610531611bbe565b60405161053e9190611ed1565b60405180910390f35b5f3411610589576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161058090612341565b60405180910390fd5b5f610592611bc4565b90503460035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8282546105e0919061238c565b925050819055503460015f8282546105f8919061238c565b925050819055508073ffffffffffffffffffffffffffffffffffffffff167f2da466a7b24304f47e87fa2e1e5a81b9831ce54fec19055ce277ca2f39ba42c4346040516106459190611ed1565b60405180910390a250565b6002602052805f5260405f205f91509050805f015490806001015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020154908060030180546106a0906123ec565b80601f01602080910402602001604051908101604052809291908181526020018280546106cc906123ec565b80156107175780601f106106ee57610100808354040283529160200191610717565b820191905f5260205f20905b8154815290600101906020018083116106fa57829003601f168201915b505050505090806004015490806005015490806006015490806007015490806008015490806009015f9054906101000a900460ff1690508a565b5f60025f8381526020019081526020015f2090505f815f0154036107aa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016107a19061248c565b60405180910390fd5b806009015f9054906101000a900460ff16156107fb576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016107f2906124f4565b60405180910390fd5b80600401544211610841576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108389061255c565b60405180910390fd5b806007015481600601541161088b576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610882906125c4565b60405180910390fd5b8060050154816004015461089f919061238c565b42116108e0576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108d790612652565b60405180910390fd5b8060020154471015610927576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161091e906126ba565b60405180910390fd5b6001816009015f6101000a81548160ff0219169083151502179055505f816001015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16826002015460405161098f90612705565b5f6040518083038185875af1925050503d805f81146109c9576040519150601f19603f3d011682016040523d82523d5f602084013e6109ce565b606091505b5050905080610a12576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610a0990612763565b60405180910390fd5b827f3b7c90df35b419337cff0919fe91849006607bb66c4373623f06f9d48c1ebb98836001015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff168460020154604051610a6b929190612781565b60405180910390a2505050565b6003602052805f5260405f205f915090505481565b5f610a96611bc4565b90508160035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20541015610b18576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610b0f906127f2565b60405180910390fd5b8160035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f828254610b649190612810565b925050819055508160015f828254610b7c9190612810565b925050819055505f8173ffffffffffffffffffffffffffffffffffffffff1683604051610ba890612705565b5f6040518083038185875af1925050503d805f8114610be2576040519150601f19603f3d011682016040523d82523d5f602084013e610be7565b606091505b5050905080610c2b576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610c2290612763565b60405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff167f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d584604051610c719190611ed1565b60405180910390a2505050565b6201518081565b6004602052815f5260405f20602052805f5260405f205f915091509054906101000a900460ff1681565b5f60035f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20549050919050565b67016345785d8a000081565b5f610d0a610d3f565b73ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16149050919050565b5f7f0000000000000000000000000000000000000000000000000000000000000000905090565b5f5f60025f8481526020019081526020015f2090505f815f015403610dc0576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610db79061248c565b60405180910390fd5b806009015f9054906101000a900460ff1615610de0576003915050610e14565b80600401544211610df4575f915050610e14565b806007015481600601541115610e0e576001915050610e14565b60029150505b919050565b5f610e22611bc4565b90505f60025f8581526020019081526020015f2090505f815f015403610e7d576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610e749061248c565b60405180910390fd5b8060040154421115610ec4576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610ebb9061288d565b60405180910390fd5b67016345785d8a000060035f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20541015610f4c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610f439061291b565b60405180910390fd5b60045f8581526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff1615610fe5576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610fdc90612983565b60405180910390fd5b600160045f8681526020019081526020015f205f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff0219169083151502179055508260055f8681526020019081526020015f205f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff021916908360028111156110b7576110b6611f5a565b5b02179055505f60028111156110cf576110ce611f5a565b5b8360028111156110e2576110e1611f5a565b5b0361110557806006015f8154809291906110fb906129a1565b919050555061116a565b6001600281111561111957611118611f5a565b5b83600281111561112c5761112b611f5a565b5b0361114f57806007015f815480929190611145906129a1565b9190505550611169565b806008015f815480929190611163906129a1565b91905055505b5b8173ffffffffffffffffffffffffffffffffffffffff16847f094f80829c509370abb2d421a078ba5926755d3de25d021dacf7bbd19853f7a2856040516111b191906122de565b60405180910390a350505050565b5f5f6111c9611bc4565b90506103e86001546111db91906129e8565b61271060035f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205461122691906129e8565b1015611267576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161125e90612a99565b60405180910390fd5b854710156112aa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016112a1906126ba565b60405180910390fd5b5f85116112ec576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016112e390612b01565b60405180910390fd5b5f73ffffffffffffffffffffffffffffffffffffffff168773ffffffffffffffffffffffffffffffffffffffff160361135a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161135190612b69565b60405180910390fd5b5f5f5f8154611368906129a1565b91905081905590506040518061014001604052808281526020018973ffffffffffffffffffffffffffffffffffffffff16815260200188815260200186868080601f0160208091040260200160405190810160405280939291908181526020018383808284375f81840152601f19601f82011690508083019250505050505050815260200187426113f9919061238c565b81526020016201518081526020015f81526020015f81526020015f81526020015f151581525060025f8381526020019081526020015f205f820151815f01556020820151816001015f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060408201518160020155606082015181600301908161149d9190612d65565b506080820151816004015560a0820151816005015560c0820151816006015560e082015181600701556101008201518160080155610120820151816009015f6101000a81548160ff0219169083151502179055509050508173ffffffffffffffffffffffffffffffffffffffff16817f51820485866a12445a1d315205e4d28921833b1ed028aed01a8c0c26fa068d708a8a89896040516115419493929190612e6e565b60405180910390a3809250505095945050505050565b6103e881565b611565611c3b565b60025f8381526020019081526020015f20604051806101400160405290815f8201548152602001600182015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001600282015481526020016003820180546115fa906123ec565b80601f0160208091040260200160405190810160405280929190818152602001828054611626906123ec565b80156116715780601f1061164857610100808354040283529160200191611671565b820191905f5260205f20905b81548152906001019060200180831161165457829003601f168201915b505050505081526020016004820154815260200160058201548152602001600682015481526020016007820154815260200160088201548152602001600982015f9054906101000a900460ff1615151515815250509050919050565b5f5f60025f8481526020019081526020015f2090505f815f0154141580156117035750806009015f9054906101000a900460ff16155b80156117125750806004015442115b8015611725575080600701548160060154115b8015611743575080600501548160040154611740919061238c565b42115b8015611753575080600201544710155b915050919050565b611763610547565b565b6005602052815f5260405f20602052805f5260405f205f915091509054906101000a900460ff1681565b5f5481565b5f61179d611bc4565b90505f60025f8581526020019081526020015f2090505f815f0154036117f8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016117ef9061248c565b60405180910390fd5b806004015442111561183f576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016118369061288d565b60405180910390fd5b60045f8581526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff166118d7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016118ce90612ef6565b60405180910390fd5b5f60055f8681526020019081526020015f205f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900460ff16905083600281111561194657611945611f5a565b5b81600281111561195957611958611f5a565b5b03611999576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161199090612f5e565b60405180910390fd5b5f60028111156119ac576119ab611f5a565b5b8160028111156119bf576119be611f5a565b5b036119e257816006015f8154809291906119d890612f7c565b9190505550611a47565b600160028111156119f6576119f5611f5a565b5b816002811115611a0957611a08611f5a565b5b03611a2c57816007015f815480929190611a2290612f7c565b9190505550611a46565b816008015f815480929190611a4090612f7c565b91905055505b5b8360055f8781526020019081526020015f205f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff02191690836002811115611ab557611ab4611f5a565b5b02179055505f6002811115611acd57611acc611f5a565b5b846002811115611ae057611adf611f5a565b5b03611b0357816006015f815480929190611af9906129a1565b9190505550611b68565b60016002811115611b1757611b16611f5a565b5b846002811115611b2a57611b29611f5a565b5b03611b4d57816007015f815480929190611b43906129a1565b9190505550611b67565b816008015f815480929190611b61906129a1565b91905055505b5b8273ffffffffffffffffffffffffffffffffffffffff16857f094f80829c509370abb2d421a078ba5926755d3de25d021dacf7bbd19853f7a286604051611baf91906122de565b60405180910390a35050505050565b60015481565b5f5f5f36905090505f611bd5611c2c565b9050808210158015611bec5750611beb33610d01565b5b15611c1c575f36828403908092611c0593929190612fab565b90611c10919061301a565b60601c92505050611c29565b611c24611c34565b925050505b90565b5f6014905090565b5f33905090565b6040518061014001604052805f81526020015f73ffffffffffffffffffffffffffffffffffffffff1681526020015f8152602001606081526020015f81526020015f81526020015f81526020015f81526020015f81526020015f151581525090565b5f5ffd5b5f5ffd5b5f819050919050565b611cb781611ca5565b8114611cc1575f5ffd5b50565b5f81359050611cd281611cae565b92915050565b5f60208284031215611ced57611cec611c9d565b5b5f611cfa84828501611cc4565b91505092915050565b611d0c81611ca5565b82525050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f611d3b82611d12565b9050919050565b611d4b81611d31565b82525050565b5f81519050919050565b5f82825260208201905092915050565b8281835e5f83830152505050565b5f601f19601f8301169050919050565b5f611d9382611d51565b611d9d8185611d5b565b9350611dad818560208601611d6b565b611db681611d79565b840191505092915050565b5f8115159050919050565b611dd581611dc1565b82525050565b5f61014082019050611def5f83018d611d03565b611dfc602083018c611d42565b611e09604083018b611d03565b8181036060830152611e1b818a611d89565b9050611e2a6080830189611d03565b611e3760a0830188611d03565b611e4460c0830187611d03565b611e5160e0830186611d03565b611e5f610100830185611d03565b611e6d610120830184611dcc565b9b9a5050505050505050505050565b611e8581611d31565b8114611e8f575f5ffd5b50565b5f81359050611ea081611e7c565b92915050565b5f60208284031215611ebb57611eba611c9d565b5b5f611ec884828501611e92565b91505092915050565b5f602082019050611ee45f830184611d03565b92915050565b5f5f60408385031215611f0057611eff611c9d565b5b5f611f0d85828601611cc4565b9250506020611f1e85828601611e92565b9150509250929050565b5f602082019050611f3b5f830184611dcc565b92915050565b5f602082019050611f545f830184611d42565b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52602160045260245ffd5b60048110611f9857611f97611f5a565b5b50565b5f819050611fa882611f87565b919050565b5f611fb782611f9b565b9050919050565b611fc781611fad565b82525050565b5f602082019050611fe05f830184611fbe565b92915050565b60038110611ff2575f5ffd5b50565b5f8135905061200381611fe6565b92915050565b5f5f6040838503121561201f5761201e611c9d565b5b5f61202c85828601611cc4565b925050602061203d85828601611ff5565b9150509250929050565b5f5ffd5b5f5ffd5b5f5ffd5b5f5f83601f84011261206857612067612047565b5b8235905067ffffffffffffffff8111156120855761208461204b565b5b6020830191508360018202830111156120a1576120a061204f565b5b9250929050565b5f5f5f5f5f608086880312156120c1576120c0611c9d565b5b5f6120ce88828901611e92565b95505060206120df88828901611cc4565b94505060406120f088828901611cc4565b935050606086013567ffffffffffffffff81111561211157612110611ca1565b5b61211d88828901612053565b92509250509295509295909350565b61213581611ca5565b82525050565b61214481611d31565b82525050565b5f82825260208201905092915050565b5f61216482611d51565b61216e818561214a565b935061217e818560208601611d6b565b61218781611d79565b840191505092915050565b61219b81611dc1565b82525050565b5f61014083015f8301516121b75f86018261212c565b5060208301516121ca602086018261213b565b5060408301516121dd604086018261212c565b50606083015184820360608601526121f5828261215a565b915050608083015161220a608086018261212c565b5060a083015161221d60a086018261212c565b5060c083015161223060c086018261212c565b5060e083015161224360e086018261212c565b5061010083015161225861010086018261212c565b5061012083015161226d610120860182612192565b508091505092915050565b5f6020820190508181035f83015261229081846121a1565b905092915050565b600381106122a9576122a8611f5a565b5b50565b5f8190506122b982612298565b919050565b5f6122c8826122ac565b9050919050565b6122d8816122be565b82525050565b5f6020820190506122f15f8301846122cf565b92915050565b7f44414f566f74696e673a206d7573742073656e642045544800000000000000005f82015250565b5f61232b601883611d5b565b9150612336826122f7565b602082019050919050565b5f6020820190508181035f8301526123588161231f565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f61239682611ca5565b91506123a183611ca5565b92508282019050808211156123b9576123b861235f565b5b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52602260045260245ffd5b5f600282049050600182168061240357607f821691505b602082108103612416576124156123bf565b5b50919050565b7f44414f566f74696e673a2070726f706f73616c20646f6573206e6f74206578695f8201527f7374000000000000000000000000000000000000000000000000000000000000602082015250565b5f612476602283611d5b565b91506124818261241c565b604082019050919050565b5f6020820190508181035f8301526124a38161246a565b9050919050565b7f44414f566f74696e673a20616c726561647920657865637574656400000000005f82015250565b5f6124de601b83611d5b565b91506124e9826124aa565b602082019050919050565b5f6020820190508181035f83015261250b816124d2565b9050919050565b7f44414f566f74696e673a20766f74696e67207374696c6c2061637469766500005f82015250565b5f612546601e83611d5b565b915061255182612512565b602082019050919050565b5f6020820190508181035f8301526125738161253a565b9050919050565b7f44414f566f74696e673a2070726f706f73616c206e6f7420617070726f7665645f82015250565b5f6125ae602083611d5b565b91506125b98261257a565b602082019050919050565b5f6020820190508181035f8301526125db816125a2565b9050919050565b7f44414f566f74696e673a20657865637574696f6e2064656c6179206e6f7420655f8201527f6c61707365640000000000000000000000000000000000000000000000000000602082015250565b5f61263c602683611d5b565b9150612647826125e2565b604082019050919050565b5f6020820190508181035f83015261266981612630565b9050919050565b7f44414f566f74696e673a20696e73756666696369656e742074726561737572795f82015250565b5f6126a4602083611d5b565b91506126af82612670565b602082019050919050565b5f6020820190508181035f8301526126d181612698565b9050919050565b5f81905092915050565b50565b5f6126f05f836126d8565b91506126fb826126e2565b5f82019050919050565b5f61270f826126e5565b9150819050919050565b7f44414f566f74696e673a207472616e73666572206661696c65640000000000005f82015250565b5f61274d601a83611d5b565b915061275882612719565b602082019050919050565b5f6020820190508181035f83015261277a81612741565b9050919050565b5f6040820190506127945f830185611d42565b6127a16020830184611d03565b9392505050565b7f44414f566f74696e673a20696e73756666696369656e742062616c616e6365005f82015250565b5f6127dc601f83611d5b565b91506127e7826127a8565b602082019050919050565b5f6020820190508181035f830152612809816127d0565b9050919050565b5f61281a82611ca5565b915061282583611ca5565b925082820390508181111561283d5761283c61235f565b5b92915050565b7f44414f566f74696e673a20766f74696e6720706572696f6420656e64656400005f82015250565b5f612877601e83611d5b565b915061288282612843565b602082019050919050565b5f6020820190508181035f8301526128a48161286b565b9050919050565b7f44414f566f74696e673a20696e73756666696369656e742062616c616e6365205f8201527f746f20766f746500000000000000000000000000000000000000000000000000602082015250565b5f612905602783611d5b565b9150612910826128ab565b604082019050919050565b5f6020820190508181035f830152612932816128f9565b9050919050565b7f44414f566f74696e673a20616c726561647920766f74656400000000000000005f82015250565b5f61296d601883611d5b565b915061297882612939565b602082019050919050565b5f6020820190508181035f83015261299a81612961565b9050919050565b5f6129ab82611ca5565b91507fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82036129dd576129dc61235f565b5b600182019050919050565b5f6129f282611ca5565b91506129fd83611ca5565b9250828202612a0b81611ca5565b91508282048414831517612a2257612a2161235f565b5b5092915050565b7f44414f566f74696e673a20696e73756666696369656e742062616c616e6365205f8201527f746f2070726f706f736500000000000000000000000000000000000000000000602082015250565b5f612a83602a83611d5b565b9150612a8e82612a29565b604082019050919050565b5f6020820190508181035f830152612ab081612a77565b9050919050565b7f44414f566f74696e673a20696e76616c6964206475726174696f6e00000000005f82015250565b5f612aeb601b83611d5b565b9150612af682612ab7565b602082019050919050565b5f6020820190508181035f830152612b1881612adf565b9050919050565b7f44414f566f74696e673a20696e76616c696420726563697069656e74000000005f82015250565b5f612b53601c83611d5b565b9150612b5e82612b1f565b602082019050919050565b5f6020820190508181035f830152612b8081612b47565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b5f819050815f5260205f209050919050565b5f6020601f8301049050919050565b5f82821b905092915050565b5f60088302612c107fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82612bd5565b612c1a8683612bd5565b95508019841693508086168417925050509392505050565b5f819050919050565b5f612c55612c50612c4b84611ca5565b612c32565b611ca5565b9050919050565b5f819050919050565b612c6e83612c3b565b612c82612c7a82612c5c565b848454612be1565b825550505050565b5f5f905090565b612c99612c8a565b612ca4818484612c65565b505050565b5f5b82811015612cca57612cbf5f828401612c91565b600181019050612cab565b505050565b601f821115612d1d5782821115612d1c57612ce981612bb4565b612cf283612bc6565b612cfb85612bc6565b6020861015612d08575f90505b808301612d1782840382612ca9565b505050505b5b505050565b5f82821c905092915050565b5f612d3d5f1984600802612d22565b1980831691505092915050565b5f612d558383612d2e565b9150826002028217905092915050565b612d6e82611d51565b67ffffffffffffffff811115612d8757612d86612b87565b5b612d9182546123ec565b612d9c828285612ccf565b5f60209050601f831160018114612dcd575f8415612dbb578287015190505b612dc58582612d4a565b865550612e2c565b601f198416612ddb86612bb4565b5f5b82811015612e0257848901518255600182019150602085019450602081019050612ddd565b86831015612e1f5784890151612e1b601f891682612d2e565b8355505b6001600288020188555050505b505050505050565b828183375f83830152505050565b5f612e4d8385611d5b565b9350612e5a838584612e34565b612e6383611d79565b840190509392505050565b5f606082019050612e815f830187611d42565b612e8e6020830186611d03565b8181036040830152612ea1818486612e42565b905095945050505050565b7f44414f566f74696e673a20686173206e6f7420766f74656400000000000000005f82015250565b5f612ee0601883611d5b565b9150612eeb82612eac565b602082019050919050565b5f6020820190508181035f830152612f0d81612ed4565b9050919050565b7f44414f566f74696e673a2073616d6520766f74650000000000000000000000005f82015250565b5f612f48601483611d5b565b9150612f5382612f14565b602082019050919050565b5f6020820190508181035f830152612f7581612f3c565b9050919050565b5f612f8682611ca5565b91505f8203612f9857612f9761235f565b5b600182039050919050565b5f5ffd5b5f5ffd5b5f5f85851115612fbe57612fbd612fa3565b5b83861115612fcf57612fce612fa7565b5b6001850283019150848603905094509492505050565b5f82905092915050565b5f7fffffffffffffffffffffffffffffffffffffffff00000000000000000000000082169050919050565b5f6130258383612fe5565b826130308135612fef565b925060148210156130705761306b7fffffffffffffffffffffffffffffffffffffffff00000000000000000000000083601403600802612bd5565b831692505b50509291505056fea26469706673582212201d27dacbc95f5ee33cff915aff3fa48c40a5535b2aa989eaea1892f63500981b64736f6c63430008210033",
+                             "sourceMap":  "119:7181:24:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1604:10;:8;:10::i;:::-;119:7181;;;;;837:45;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;5017:917;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;888:43;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1696:386;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;630:48;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;937:60;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;6930:108;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;573:51;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1874:137:20;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1666:107;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;6072:454:24;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3196:822;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;2088:1102;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;684:53;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5940:126;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;6532:392;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1627:63;;;:::i;:::-;;1003:61;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;767:28;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4024:987;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;801:29;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;7044:254;7103:1;7091:9;:13;7083:50;;;;;;;;;;;;:::i;:::-;;;;;;;;;7143:14;7160:12;:10;:12::i;:::-;7143:29;;7202:9;7182:8;:16;7191:6;7182:16;;;;;;;;;;;;;;;;:29;;;;;;;:::i;:::-;;;;;;;;7239:9;7221:14;;:27;;;;;;;:::i;:::-;;;;;;;;7273:6;7263:28;;;7281:9;7263:28;;;;;;:::i;:::-;;;;;;;;7073:225;7044:254::o;837:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5017:917::-;5081:25;5109:9;:21;5119:10;5109:21;;;;;;;;;;;5081:49;;5164:1;5149:8;:11;;;:16;5141:63;;;;;;;;;;;;:::i;:::-;;;;;;;;;5223:8;:17;;;;;;;;;;;;5222:18;5214:58;;;;;;;;;;;;:::i;:::-;;;;;;;;;5308:8;:23;;;5290:15;:41;5282:84;;;;;;;;;;;;:::i;:::-;;;;;;;;;5404:8;:21;;;5384:8;:17;;;:41;5376:86;;;;;;;;;;;;:::i;:::-;;;;;;;;;5524:8;:23;;;5498:8;:23;;;:49;;;;:::i;:::-;5480:15;:67;5472:118;;;;;;;;;;;;:::i;:::-;;;;;;;;;5633:8;:15;;;5608:21;:40;;5600:85;;;;;;;;;;;;:::i;:::-;;;;;;;;;5716:4;5696:8;:17;;;:24;;;;;;;;;;;;;;;;;;5732:7;5744:8;:18;;;;;;;;;;;;:23;;5775:8;:15;;;5744:51;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5731:64;;;5813:2;5805:41;;;;;;;;;;;;:::i;:::-;;;;;;;;;5879:10;5862:65;5891:8;:18;;;;;;;;;;;;5911:8;:15;;;5862:65;;;;;;;:::i;:::-;;;;;;;;5071:863;;5017:917;:::o;888:43::-;;;;;;;;;;;;;;;;;:::o;1696:386::-;1749:14;1766:12;:10;:12::i;:::-;1749:29;;1816:6;1796:8;:16;1805:6;1796:16;;;;;;;;;;;;;;;;:26;;1788:70;;;;;;;;;;;;:::i;:::-;;;;;;;;;1889:6;1869:8;:16;1878:6;1869:16;;;;;;;;;;;;;;;;:26;;;;;;;:::i;:::-;;;;;;;;1923:6;1905:14;;:24;;;;;;;:::i;:::-;;;;;;;;1941:7;1953:6;:11;;1972:6;1953:30;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1940:43;;;2001:2;1993:41;;;;;;;;;;;;:::i;:::-;;;;;;;;;2060:6;2050:25;;;2068:6;2050:25;;;;;;:::i;:::-;;;;;;;;1739:343;;1696:386;:::o;630:48::-;672:6;630:48;:::o;937:60::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6930:108::-;6991:7;7017:8;:14;7026:4;7017:14;;;;;;;;;;;;;;;;7010:21;;6930:108;;;:::o;573:51::-;615:9;573:51;:::o;1874:137:20:-;1950:4;1986:18;:16;:18::i;:::-;1973:31;;:9;:31;;;1966:38;;1874:137;;;:::o;1666:107::-;1723:7;1749:17;1742:24;;1666:107;:::o;6072:454:24:-;6141:13;6166:18;6187:9;:21;6197:10;6187:21;;;;;;;;;;;6166:42;;6234:1;6226;:4;;;:9;6218:56;;;;;;;;;;;;:::i;:::-;;;;;;;;;6289:1;:10;;;;;;;;;;;;6285:45;;;6308:22;6301:29;;;;;6285:45;6363:1;:16;;;6344:15;:35;6340:68;;6388:20;6381:27;;;;;6340:68;6435:1;:14;;;6422:1;:10;;;:27;6418:62;;;6458:22;6451:29;;;;;6418:62;6497:22;6490:29;;;6072:454;;;;:::o;3196:822::-;3268:14;3285:12;:10;:12::i;:::-;3268:29;;3307:25;3335:9;:21;3345:10;3335:21;;;;;;;;;;;3307:49;;3390:1;3375:8;:11;;;:16;3367:63;;;;;;;;;;;;:::i;:::-;;;;;;;;;3467:8;:23;;;3448:15;:42;;3440:85;;;;;;;;;;;;:::i;:::-;;;;;;;;;615:9;3543:8;:16;3552:6;3543:16;;;;;;;;;;;;;;;;:35;;3535:87;;;;;;;;;;;;:::i;:::-;;;;;;;;;3641:8;:20;3650:10;3641:20;;;;;;;;;;;:28;3662:6;3641:28;;;;;;;;;;;;;;;;;;;;;;;;;3640:29;3632:66;;;;;;;;;;;;:::i;:::-;;;;;;;;;3740:4;3709:8;:20;3718:10;3709:20;;;;;;;;;;;:28;3730:6;3709:28;;;;;;;;;;;;;;;;:35;;;;;;;;;;;;;;;;;;3782:8;3754:5;:17;3760:10;3754:17;;;;;;;;;;;:25;3772:6;3754:25;;;;;;;;;;;;;;;;:36;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;3817:12;3805:24;;;;;;;;:::i;:::-;;:8;:24;;;;;;;;:::i;:::-;;;3801:159;;3831:8;:17;;;:19;;;;;;;;;:::i;:::-;;;;;;3801:159;;;3881:16;3869:28;;;;;;;;:::i;:::-;;:8;:28;;;;;;;;:::i;:::-;;;3865:95;;3899:8;:21;;;:23;;;;;;;;;:::i;:::-;;;;;;3865:95;;;3937:8;:21;;;:23;;;;;;;;;:::i;:::-;;;;;;3865:95;3801:159;3994:6;3976:35;;3982:10;3976:35;4002:8;3976:35;;;;;;:::i;:::-;;;;;;;;3258:760;;3196:822;;:::o;2088:1102::-;2256:7;2275:14;2292:12;:10;:12::i;:::-;2275:29;;733:4;2350:14;;:39;;;;:::i;:::-;2341:5;2322:8;:16;2331:6;2322:16;;;;;;;;;;;;;;;;:24;;;;:::i;:::-;:67;;2314:122;;;;;;;;;;;;:::i;:::-;;;;;;;;;2479:6;2454:21;:31;;2446:76;;;;;;;;;;;;:::i;:::-;;;;;;;;;2557:1;2540:14;:18;2532:58;;;;;;;;;;;;:::i;:::-;;;;;;;;;2629:1;2608:23;;:9;:23;;;2600:64;;;;;;;;;;;;:::i;:::-;;;;;;;;;2675:10;2690:13;;2688:15;;;;;:::i;:::-;;;;;;;2675:28;;2730:359;;;;;;;;2757:2;2730:359;;;;2784:9;2730:359;;;;;;2815:6;2730:359;;;;2848:11;;2730:359;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2907:14;2889:15;:32;;;;:::i;:::-;2730:359;;;;672:6;2730:359;;;;2990:1;2730:359;;;;3019:1;2730:359;;;;3048:1;2730:359;;;;3073:5;2730:359;;;;;2714:9;:13;2724:2;2714:13;;;;;;;;;;;:375;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3125:6;3105:59;;3121:2;3105:59;3133:9;3144:6;3152:11;;3105:59;;;;;;;;;:::i;:::-;;;;;;;;3181:2;3174:9;;;;2088:1102;;;;;;;:::o;684:53::-;733:4;684:53;:::o;5940:126::-;6004:15;;:::i;:::-;6038:9;:21;6048:10;6038:21;;;;;;;;;;;6031:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5940:126;;;:::o;6532:392::-;6595:4;6611:18;6632:9;:21;6642:10;6632:21;;;;;;;;;;;6611:42;;6678:1;6670;:4;;;:9;;:36;;;;;6696:1;:10;;;;;;;;;;;;6695:11;6670:36;:86;;;;;6740:1;:16;;;6722:15;:34;6670:86;:129;;;;;6785:1;:14;;;6772:1;:10;;;:27;6670:129;:198;;;;;6852:1;:16;;;6833:1;:16;;;:35;;;;:::i;:::-;6815:15;:53;6670:198;:247;;;;;6909:1;:8;;;6884:21;:33;;6670:247;6663:254;;;6532:392;;;:::o;1627:63::-;1673:10;:8;:10::i;:::-;1627:63::o;1003:61::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;767:28::-;;;;:::o;4024:987::-;4105:14;4122:12;:10;:12::i;:::-;4105:29;;4144:25;4172:9;:21;4182:10;4172:21;;;;;;;;;;;4144:49;;4227:1;4212:8;:11;;;:16;4204:63;;;;;;;;;;;;:::i;:::-;;;;;;;;;4304:8;:23;;;4285:15;:42;;4277:85;;;;;;;;;;;;:::i;:::-;;;;;;;;;4380:8;:20;4389:10;4380:20;;;;;;;;;;;:28;4401:6;4380:28;;;;;;;;;;;;;;;;;;;;;;;;;4372:65;;;;;;;;;;;;:::i;:::-;;;;;;;;;4448:16;4467:5;:17;4473:10;4467:17;;;;;;;;;;;:25;4485:6;4467:25;;;;;;;;;;;;;;;;;;;;;;;;;4448:44;;4521:11;4510:22;;;;;;;;:::i;:::-;;:7;:22;;;;;;;;:::i;:::-;;;4502:55;;;;;;;;;;;;:::i;:::-;;;;;;;;;4583:12;4572:23;;;;;;;;:::i;:::-;;:7;:23;;;;;;;;:::i;:::-;;;4568:157;;4597:8;:17;;;:19;;;;;;;;;:::i;:::-;;;;;;4568:157;;;4646:16;4635:27;;;;;;;;:::i;:::-;;:7;:27;;;;;;;;:::i;:::-;;;4631:94;;4664:8;:21;;;:23;;;;;;;;;:::i;:::-;;;;;;4631:94;;;4702:8;:21;;;:23;;;;;;;;;:::i;:::-;;;;;;4631:94;4568:157;4764:11;4736:5;:17;4742:10;4736:17;;;;;;;;;;;:25;4754:6;4736:25;;;;;;;;;;;;;;;;:39;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;4804:12;4789:27;;;;;;;;:::i;:::-;;:11;:27;;;;;;;;:::i;:::-;;;4785:165;;4818:8;:17;;;:19;;;;;;;;;:::i;:::-;;;;;;4785:165;;;4871:16;4856:31;;;;;;;;:::i;:::-;;:11;:31;;;;;;;;:::i;:::-;;;4852:98;;4889:8;:21;;;:23;;;;;;;;;:::i;:::-;;;;;;4852:98;;;4927:8;:21;;;:23;;;;;;;;;:::i;:::-;;;;;;4852:98;4785:165;4984:6;4966:38;;4972:10;4966:38;4992:11;4966:38;;;;;;:::i;:::-;;;;;;;;4095:916;;;4024:987;;:::o;801:29::-;;;;:::o;2248:471:20:-;2310:7;2329:22;2354:8;;:15;;2329:40;;2379:27;2409:22;:20;:22::i;:::-;2379:52;;2463:19;2445:14;:37;;:71;;;;;2486:30;2505:10;2486:18;:30::i;:::-;2445:71;2441:272;;;2583:8;;2609:19;2592:14;:36;2583:47;;;;;;;;;:::i;:::-;2575:56;;;;;:::i;:::-;2567:65;;2560:72;;;;;;2441:272;2684:18;:16;:18::i;:::-;2677:25;;;;2248:471;;:::o;3511:107::-;3583:7;3609:2;3602:9;;3511:107;:::o;656:96:21:-;709:7;735:10;728:17;;656:96;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;88:117:28:-;197:1;194;187:12;211:117;320:1;317;310:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:139::-;591:5;629:6;616:20;607:29;;645:33;672:5;645:33;:::i;:::-;545:139;;;;:::o;690:329::-;749:6;798:2;786:9;777:7;773:23;769:32;766:119;;;804:79;;:::i;:::-;766:119;924:1;949:53;994:7;985:6;974:9;970:22;949:53;:::i;:::-;939:63;;895:117;690:329;;;;:::o;1025:118::-;1112:24;1130:5;1112:24;:::i;:::-;1107:3;1100:37;1025:118;;:::o;1149:126::-;1186:7;1226:42;1219:5;1215:54;1204:65;;1149:126;;;:::o;1281:96::-;1318:7;1347:24;1365:5;1347:24;:::i;:::-;1336:35;;1281:96;;;:::o;1383:118::-;1470:24;1488:5;1470:24;:::i;:::-;1465:3;1458:37;1383:118;;:::o;1507:99::-;1559:6;1593:5;1587:12;1577:22;;1507:99;;;:::o;1612:169::-;1696:11;1730:6;1725:3;1718:19;1770:4;1765:3;1761:14;1746:29;;1612:169;;;;:::o;1787:139::-;1876:6;1871:3;1866;1860:23;1917:1;1908:6;1903:3;1899:16;1892:27;1787:139;;;:::o;1932:102::-;1973:6;2024:2;2020:7;2015:2;2008:5;2004:14;2000:28;1990:38;;1932:102;;;:::o;2040:377::-;2128:3;2156:39;2189:5;2156:39;:::i;:::-;2211:71;2275:6;2270:3;2211:71;:::i;:::-;2204:78;;2291:65;2349:6;2344:3;2337:4;2330:5;2326:16;2291:65;:::i;:::-;2381:29;2403:6;2381:29;:::i;:::-;2376:3;2372:39;2365:46;;2132:285;2040:377;;;;:::o;2423:90::-;2457:7;2500:5;2493:13;2486:21;2475:32;;2423:90;;;:::o;2519:109::-;2600:21;2615:5;2600:21;:::i;:::-;2595:3;2588:34;2519:109;;:::o;2634:1298::-;2993:4;3031:3;3020:9;3016:19;3008:27;;3045:71;3113:1;3102:9;3098:17;3089:6;3045:71;:::i;:::-;3126:72;3194:2;3183:9;3179:18;3170:6;3126:72;:::i;:::-;3208;3276:2;3265:9;3261:18;3252:6;3208:72;:::i;:::-;3327:9;3321:4;3317:20;3312:2;3301:9;3297:18;3290:48;3355:78;3428:4;3419:6;3355:78;:::i;:::-;3347:86;;3443:73;3511:3;3500:9;3496:19;3487:6;3443:73;:::i;:::-;3526;3594:3;3583:9;3579:19;3570:6;3526:73;:::i;:::-;3609;3677:3;3666:9;3662:19;3653:6;3609:73;:::i;:::-;3692;3760:3;3749:9;3745:19;3736:6;3692:73;:::i;:::-;3775;3843:3;3832:9;3828:19;3819:6;3775:73;:::i;:::-;3858:67;3920:3;3909:9;3905:19;3896:6;3858:67;:::i;:::-;2634:1298;;;;;;;;;;;;;:::o;3938:122::-;4011:24;4029:5;4011:24;:::i;:::-;4004:5;4001:35;3991:63;;4050:1;4047;4040:12;3991:63;3938:122;:::o;4066:139::-;4112:5;4150:6;4137:20;4128:29;;4166:33;4193:5;4166:33;:::i;:::-;4066:139;;;;:::o;4211:329::-;4270:6;4319:2;4307:9;4298:7;4294:23;4290:32;4287:119;;;4325:79;;:::i;:::-;4287:119;4445:1;4470:53;4515:7;4506:6;4495:9;4491:22;4470:53;:::i;:::-;4460:63;;4416:117;4211:329;;;;:::o;4546:222::-;4639:4;4677:2;4666:9;4662:18;4654:26;;4690:71;4758:1;4747:9;4743:17;4734:6;4690:71;:::i;:::-;4546:222;;;;:::o;4774:474::-;4842:6;4850;4899:2;4887:9;4878:7;4874:23;4870:32;4867:119;;;4905:79;;:::i;:::-;4867:119;5025:1;5050:53;5095:7;5086:6;5075:9;5071:22;5050:53;:::i;:::-;5040:63;;4996:117;5152:2;5178:53;5223:7;5214:6;5203:9;5199:22;5178:53;:::i;:::-;5168:63;;5123:118;4774:474;;;;;:::o;5254:210::-;5341:4;5379:2;5368:9;5364:18;5356:26;;5392:65;5454:1;5443:9;5439:17;5430:6;5392:65;:::i;:::-;5254:210;;;;:::o;5470:222::-;5563:4;5601:2;5590:9;5586:18;5578:26;;5614:71;5682:1;5671:9;5667:17;5658:6;5614:71;:::i;:::-;5470:222;;;;:::o;5698:180::-;5746:77;5743:1;5736:88;5843:4;5840:1;5833:15;5867:4;5864:1;5857:15;5884:124;5976:1;5969:5;5966:12;5956:46;;5982:18;;:::i;:::-;5956:46;5884:124;:::o;6014:149::-;6070:7;6099:5;6088:16;;6105:52;6151:5;6105:52;:::i;:::-;6014:149;;;:::o;6169:::-;6236:9;6269:43;6306:5;6269:43;:::i;:::-;6256:56;;6169:149;;;:::o;6324:165::-;6428:54;6476:5;6428:54;:::i;:::-;6423:3;6416:67;6324:165;;:::o;6495:256::-;6605:4;6643:2;6632:9;6628:18;6620:26;;6656:88;6741:1;6730:9;6726:17;6717:6;6656:88;:::i;:::-;6495:256;;;;:::o;6757:113::-;6844:1;6837:5;6834:12;6824:40;;6860:1;6857;6850:12;6824:40;6757:113;:::o;6876:167::-;6936:5;6974:6;6961:20;6952:29;;6990:47;7031:5;6990:47;:::i;:::-;6876:167;;;;:::o;7049:502::-;7131:6;7139;7188:2;7176:9;7167:7;7163:23;7159:32;7156:119;;;7194:79;;:::i;:::-;7156:119;7314:1;7339:53;7384:7;7375:6;7364:9;7360:22;7339:53;:::i;:::-;7329:63;;7285:117;7441:2;7467:67;7526:7;7517:6;7506:9;7502:22;7467:67;:::i;:::-;7457:77;;7412:132;7049:502;;;;;:::o;7557:117::-;7666:1;7663;7656:12;7680:117;7789:1;7786;7779:12;7803:117;7912:1;7909;7902:12;7940:553;7998:8;8008:6;8058:3;8051:4;8043:6;8039:17;8035:27;8025:122;;8066:79;;:::i;:::-;8025:122;8179:6;8166:20;8156:30;;8209:18;8201:6;8198:30;8195:117;;;8231:79;;:::i;:::-;8195:117;8345:4;8337:6;8333:17;8321:29;;8399:3;8391:4;8383:6;8379:17;8369:8;8365:32;8362:41;8359:128;;;8406:79;;:::i;:::-;8359:128;7940:553;;;;;:::o;8499:965::-;8597:6;8605;8613;8621;8629;8678:3;8666:9;8657:7;8653:23;8649:33;8646:120;;;8685:79;;:::i;:::-;8646:120;8805:1;8830:53;8875:7;8866:6;8855:9;8851:22;8830:53;:::i;:::-;8820:63;;8776:117;8932:2;8958:53;9003:7;8994:6;8983:9;8979:22;8958:53;:::i;:::-;8948:63;;8903:118;9060:2;9086:53;9131:7;9122:6;9111:9;9107:22;9086:53;:::i;:::-;9076:63;;9031:118;9216:2;9205:9;9201:18;9188:32;9247:18;9239:6;9236:30;9233:117;;;9269:79;;:::i;:::-;9233:117;9382:65;9439:7;9430:6;9419:9;9415:22;9382:65;:::i;:::-;9364:83;;;;9159:298;8499:965;;;;;;;;:::o;9470:108::-;9547:24;9565:5;9547:24;:::i;:::-;9542:3;9535:37;9470:108;;:::o;9584:::-;9661:24;9679:5;9661:24;:::i;:::-;9656:3;9649:37;9584:108;;:::o;9698:159::-;9772:11;9806:6;9801:3;9794:19;9846:4;9841:3;9837:14;9822:29;;9698:159;;;;:::o;9863:357::-;9941:3;9969:39;10002:5;9969:39;:::i;:::-;10024:61;10078:6;10073:3;10024:61;:::i;:::-;10017:68;;10094:65;10152:6;10147:3;10140:4;10133:5;10129:16;10094:65;:::i;:::-;10184:29;10206:6;10184:29;:::i;:::-;10179:3;10175:39;10168:46;;9945:275;9863:357;;;;:::o;10226:99::-;10297:21;10312:5;10297:21;:::i;:::-;10292:3;10285:34;10226:99;;:::o;10393:2062::-;10516:3;10552:6;10547:3;10543:16;10639:4;10632:5;10628:16;10622:23;10658:63;10715:4;10710:3;10706:14;10692:12;10658:63;:::i;:::-;10569:162;10818:4;10811:5;10807:16;10801:23;10837:63;10894:4;10889:3;10885:14;10871:12;10837:63;:::i;:::-;10741:169;10994:4;10987:5;10983:16;10977:23;11013:63;11070:4;11065:3;11061:14;11047:12;11013:63;:::i;:::-;10920:166;11175:4;11168:5;11164:16;11158:23;11228:3;11222:4;11218:14;11211:4;11206:3;11202:14;11195:38;11254:73;11322:4;11308:12;11254:73;:::i;:::-;11246:81;;11096:242;11430:4;11423:5;11419:16;11413:23;11449:63;11506:4;11501:3;11497:14;11483:12;11449:63;:::i;:::-;11348:174;11614:4;11607:5;11603:16;11597:23;11633:63;11690:4;11685:3;11681:14;11667:12;11633:63;:::i;:::-;11532:174;11792:4;11785:5;11781:16;11775:23;11811:63;11868:4;11863:3;11859:14;11845:12;11811:63;:::i;:::-;11716:168;11974:4;11967:5;11963:16;11957:23;11993:63;12050:4;12045:3;12041:14;12027:12;11993:63;:::i;:::-;11894:172;12156:6;12149:5;12145:18;12139:25;12177:65;12234:6;12229:3;12225:16;12211:12;12177:65;:::i;:::-;12076:176;12338:6;12331:5;12327:18;12321:25;12359:59;12410:6;12405:3;12401:16;12387:12;12359:59;:::i;:::-;12262:166;12445:4;12438:11;;10521:1934;10393:2062;;;;:::o;12461:381::-;12608:4;12646:2;12635:9;12631:18;12623:26;;12695:9;12689:4;12685:20;12681:1;12670:9;12666:17;12659:47;12723:112;12830:4;12821:6;12723:112;:::i;:::-;12715:120;;12461:381;;;;:::o;12848:119::-;12935:1;12928:5;12925:12;12915:46;;12941:18;;:::i;:::-;12915:46;12848:119;:::o;12973:139::-;13024:7;13053:5;13042:16;;13059:47;13100:5;13059:47;:::i;:::-;12973:139;;;:::o;13118:::-;13180:9;13213:38;13245:5;13213:38;:::i;:::-;13200:51;;13118:139;;;:::o;13263:155::-;13362:49;13405:5;13362:49;:::i;:::-;13357:3;13350:62;13263:155;;:::o;13424:246::-;13529:4;13567:2;13556:9;13552:18;13544:26;;13580:83;13660:1;13649:9;13645:17;13636:6;13580:83;:::i;:::-;13424:246;;;;:::o;13676:174::-;13816:26;13812:1;13804:6;13800:14;13793:50;13676:174;:::o;13856:366::-;13998:3;14019:67;14083:2;14078:3;14019:67;:::i;:::-;14012:74;;14095:93;14184:3;14095:93;:::i;:::-;14213:2;14208:3;14204:12;14197:19;;13856:366;;;:::o;14228:419::-;14394:4;14432:2;14421:9;14417:18;14409:26;;14481:9;14475:4;14471:20;14467:1;14456:9;14452:17;14445:47;14509:131;14635:4;14509:131;:::i;:::-;14501:139;;14228:419;;;:::o;14653:180::-;14701:77;14698:1;14691:88;14798:4;14795:1;14788:15;14822:4;14819:1;14812:15;14839:191;14879:3;14898:20;14916:1;14898:20;:::i;:::-;14893:25;;14932:20;14950:1;14932:20;:::i;:::-;14927:25;;14975:1;14972;14968:9;14961:16;;14996:3;14993:1;14990:10;14987:36;;;15003:18;;:::i;:::-;14987:36;14839:191;;;;:::o;15036:180::-;15084:77;15081:1;15074:88;15181:4;15178:1;15171:15;15205:4;15202:1;15195:15;15222:320;15266:6;15303:1;15297:4;15293:12;15283:22;;15350:1;15344:4;15340:12;15371:18;15361:81;;15427:4;15419:6;15415:17;15405:27;;15361:81;15489:2;15481:6;15478:14;15458:18;15455:38;15452:84;;15508:18;;:::i;:::-;15452:84;15273:269;15222:320;;;:::o;15548:221::-;15688:34;15684:1;15676:6;15672:14;15665:58;15757:4;15752:2;15744:6;15740:15;15733:29;15548:221;:::o;15775:366::-;15917:3;15938:67;16002:2;15997:3;15938:67;:::i;:::-;15931:74;;16014:93;16103:3;16014:93;:::i;:::-;16132:2;16127:3;16123:12;16116:19;;15775:366;;;:::o;16147:419::-;16313:4;16351:2;16340:9;16336:18;16328:26;;16400:9;16394:4;16390:20;16386:1;16375:9;16371:17;16364:47;16428:131;16554:4;16428:131;:::i;:::-;16420:139;;16147:419;;;:::o;16572:177::-;16712:29;16708:1;16700:6;16696:14;16689:53;16572:177;:::o;16755:366::-;16897:3;16918:67;16982:2;16977:3;16918:67;:::i;:::-;16911:74;;16994:93;17083:3;16994:93;:::i;:::-;17112:2;17107:3;17103:12;17096:19;;16755:366;;;:::o;17127:419::-;17293:4;17331:2;17320:9;17316:18;17308:26;;17380:9;17374:4;17370:20;17366:1;17355:9;17351:17;17344:47;17408:131;17534:4;17408:131;:::i;:::-;17400:139;;17127:419;;;:::o;17552:180::-;17692:32;17688:1;17680:6;17676:14;17669:56;17552:180;:::o;17738:366::-;17880:3;17901:67;17965:2;17960:3;17901:67;:::i;:::-;17894:74;;17977:93;18066:3;17977:93;:::i;:::-;18095:2;18090:3;18086:12;18079:19;;17738:366;;;:::o;18110:419::-;18276:4;18314:2;18303:9;18299:18;18291:26;;18363:9;18357:4;18353:20;18349:1;18338:9;18334:17;18327:47;18391:131;18517:4;18391:131;:::i;:::-;18383:139;;18110:419;;;:::o;18535:182::-;18675:34;18671:1;18663:6;18659:14;18652:58;18535:182;:::o;18723:366::-;18865:3;18886:67;18950:2;18945:3;18886:67;:::i;:::-;18879:74;;18962:93;19051:3;18962:93;:::i;:::-;19080:2;19075:3;19071:12;19064:19;;18723:366;;;:::o;19095:419::-;19261:4;19299:2;19288:9;19284:18;19276:26;;19348:9;19342:4;19338:20;19334:1;19323:9;19319:17;19312:47;19376:131;19502:4;19376:131;:::i;:::-;19368:139;;19095:419;;;:::o;19520:225::-;19660:34;19656:1;19648:6;19644:14;19637:58;19729:8;19724:2;19716:6;19712:15;19705:33;19520:225;:::o;19751:366::-;19893:3;19914:67;19978:2;19973:3;19914:67;:::i;:::-;19907:74;;19990:93;20079:3;19990:93;:::i;:::-;20108:2;20103:3;20099:12;20092:19;;19751:366;;;:::o;20123:419::-;20289:4;20327:2;20316:9;20312:18;20304:26;;20376:9;20370:4;20366:20;20362:1;20351:9;20347:17;20340:47;20404:131;20530:4;20404:131;:::i;:::-;20396:139;;20123:419;;;:::o;20548:182::-;20688:34;20684:1;20676:6;20672:14;20665:58;20548:182;:::o;20736:366::-;20878:3;20899:67;20963:2;20958:3;20899:67;:::i;:::-;20892:74;;20975:93;21064:3;20975:93;:::i;:::-;21093:2;21088:3;21084:12;21077:19;;20736:366;;;:::o;21108:419::-;21274:4;21312:2;21301:9;21297:18;21289:26;;21361:9;21355:4;21351:20;21347:1;21336:9;21332:17;21325:47;21389:131;21515:4;21389:131;:::i;:::-;21381:139;;21108:419;;;:::o;21533:147::-;21634:11;21671:3;21656:18;;21533:147;;;;:::o;21686:114::-;;:::o;21806:398::-;21965:3;21986:83;22067:1;22062:3;21986:83;:::i;:::-;21979:90;;22078:93;22167:3;22078:93;:::i;:::-;22196:1;22191:3;22187:11;22180:18;;21806:398;;;:::o;22210:379::-;22394:3;22416:147;22559:3;22416:147;:::i;:::-;22409:154;;22580:3;22573:10;;22210:379;;;:::o;22595:176::-;22735:28;22731:1;22723:6;22719:14;22712:52;22595:176;:::o;22777:366::-;22919:3;22940:67;23004:2;22999:3;22940:67;:::i;:::-;22933:74;;23016:93;23105:3;23016:93;:::i;:::-;23134:2;23129:3;23125:12;23118:19;;22777:366;;;:::o;23149:419::-;23315:4;23353:2;23342:9;23338:18;23330:26;;23402:9;23396:4;23392:20;23388:1;23377:9;23373:17;23366:47;23430:131;23556:4;23430:131;:::i;:::-;23422:139;;23149:419;;;:::o;23574:332::-;23695:4;23733:2;23722:9;23718:18;23710:26;;23746:71;23814:1;23803:9;23799:17;23790:6;23746:71;:::i;:::-;23827:72;23895:2;23884:9;23880:18;23871:6;23827:72;:::i;:::-;23574:332;;;;;:::o;23912:181::-;24052:33;24048:1;24040:6;24036:14;24029:57;23912:181;:::o;24099:366::-;24241:3;24262:67;24326:2;24321:3;24262:67;:::i;:::-;24255:74;;24338:93;24427:3;24338:93;:::i;:::-;24456:2;24451:3;24447:12;24440:19;;24099:366;;;:::o;24471:419::-;24637:4;24675:2;24664:9;24660:18;24652:26;;24724:9;24718:4;24714:20;24710:1;24699:9;24695:17;24688:47;24752:131;24878:4;24752:131;:::i;:::-;24744:139;;24471:419;;;:::o;24896:194::-;24936:4;24956:20;24974:1;24956:20;:::i;:::-;24951:25;;24990:20;25008:1;24990:20;:::i;:::-;24985:25;;25034:1;25031;25027:9;25019:17;;25058:1;25052:4;25049:11;25046:37;;;25063:18;;:::i;:::-;25046:37;24896:194;;;;:::o;25096:180::-;25236:32;25232:1;25224:6;25220:14;25213:56;25096:180;:::o;25282:366::-;25424:3;25445:67;25509:2;25504:3;25445:67;:::i;:::-;25438:74;;25521:93;25610:3;25521:93;:::i;:::-;25639:2;25634:3;25630:12;25623:19;;25282:366;;;:::o;25654:419::-;25820:4;25858:2;25847:9;25843:18;25835:26;;25907:9;25901:4;25897:20;25893:1;25882:9;25878:17;25871:47;25935:131;26061:4;25935:131;:::i;:::-;25927:139;;25654:419;;;:::o;26079:226::-;26219:34;26215:1;26207:6;26203:14;26196:58;26288:9;26283:2;26275:6;26271:15;26264:34;26079:226;:::o;26311:366::-;26453:3;26474:67;26538:2;26533:3;26474:67;:::i;:::-;26467:74;;26550:93;26639:3;26550:93;:::i;:::-;26668:2;26663:3;26659:12;26652:19;;26311:366;;;:::o;26683:419::-;26849:4;26887:2;26876:9;26872:18;26864:26;;26936:9;26930:4;26926:20;26922:1;26911:9;26907:17;26900:47;26964:131;27090:4;26964:131;:::i;:::-;26956:139;;26683:419;;;:::o;27108:174::-;27248:26;27244:1;27236:6;27232:14;27225:50;27108:174;:::o;27288:366::-;27430:3;27451:67;27515:2;27510:3;27451:67;:::i;:::-;27444:74;;27527:93;27616:3;27527:93;:::i;:::-;27645:2;27640:3;27636:12;27629:19;;27288:366;;;:::o;27660:419::-;27826:4;27864:2;27853:9;27849:18;27841:26;;27913:9;27907:4;27903:20;27899:1;27888:9;27884:17;27877:47;27941:131;28067:4;27941:131;:::i;:::-;27933:139;;27660:419;;;:::o;28085:233::-;28124:3;28147:24;28165:5;28147:24;:::i;:::-;28138:33;;28193:66;28186:5;28183:77;28180:103;;28263:18;;:::i;:::-;28180:103;28310:1;28303:5;28299:13;28292:20;;28085:233;;;:::o;28324:410::-;28364:7;28387:20;28405:1;28387:20;:::i;:::-;28382:25;;28421:20;28439:1;28421:20;:::i;:::-;28416:25;;28476:1;28473;28469:9;28498:30;28516:11;28498:30;:::i;:::-;28487:41;;28677:1;28668:7;28664:15;28661:1;28658:22;28638:1;28631:9;28611:83;28588:139;;28707:18;;:::i;:::-;28588:139;28372:362;28324:410;;;;:::o;28740:229::-;28880:34;28876:1;28868:6;28864:14;28857:58;28949:12;28944:2;28936:6;28932:15;28925:37;28740:229;:::o;28975:366::-;29117:3;29138:67;29202:2;29197:3;29138:67;:::i;:::-;29131:74;;29214:93;29303:3;29214:93;:::i;:::-;29332:2;29327:3;29323:12;29316:19;;28975:366;;;:::o;29347:419::-;29513:4;29551:2;29540:9;29536:18;29528:26;;29600:9;29594:4;29590:20;29586:1;29575:9;29571:17;29564:47;29628:131;29754:4;29628:131;:::i;:::-;29620:139;;29347:419;;;:::o;29772:177::-;29912:29;29908:1;29900:6;29896:14;29889:53;29772:177;:::o;29955:366::-;30097:3;30118:67;30182:2;30177:3;30118:67;:::i;:::-;30111:74;;30194:93;30283:3;30194:93;:::i;:::-;30312:2;30307:3;30303:12;30296:19;;29955:366;;;:::o;30327:419::-;30493:4;30531:2;30520:9;30516:18;30508:26;;30580:9;30574:4;30570:20;30566:1;30555:9;30551:17;30544:47;30608:131;30734:4;30608:131;:::i;:::-;30600:139;;30327:419;;;:::o;30752:178::-;30892:30;30888:1;30880:6;30876:14;30869:54;30752:178;:::o;30936:366::-;31078:3;31099:67;31163:2;31158:3;31099:67;:::i;:::-;31092:74;;31175:93;31264:3;31175:93;:::i;:::-;31293:2;31288:3;31284:12;31277:19;;30936:366;;;:::o;31308:419::-;31474:4;31512:2;31501:9;31497:18;31489:26;;31561:9;31555:4;31551:20;31547:1;31536:9;31532:17;31525:47;31589:131;31715:4;31589:131;:::i;:::-;31581:139;;31308:419;;;:::o;31733:180::-;31781:77;31778:1;31771:88;31878:4;31875:1;31868:15;31902:4;31899:1;31892:15;31919:141;31968:4;31991:3;31983:11;;32014:3;32011:1;32004:14;32048:4;32045:1;32035:18;32027:26;;31919:141;;;:::o;32066:93::-;32103:6;32150:2;32145;32138:5;32134:14;32130:23;32120:33;;32066:93;;;:::o;32165:107::-;32209:8;32259:5;32253:4;32249:16;32228:37;;32165:107;;;;:::o;32278:393::-;32347:6;32397:1;32385:10;32381:18;32420:97;32450:66;32439:9;32420:97;:::i;:::-;32538:39;32568:8;32557:9;32538:39;:::i;:::-;32526:51;;32610:4;32606:9;32599:5;32595:21;32586:30;;32659:4;32649:8;32645:19;32638:5;32635:30;32625:40;;32354:317;;32278:393;;;;;:::o;32677:60::-;32705:3;32726:5;32719:12;;32677:60;;;:::o;32743:142::-;32793:9;32826:53;32844:34;32853:24;32871:5;32853:24;:::i;:::-;32844:34;:::i;:::-;32826:53;:::i;:::-;32813:66;;32743:142;;;:::o;32891:75::-;32934:3;32955:5;32948:12;;32891:75;;;:::o;32972:269::-;33082:39;33113:7;33082:39;:::i;:::-;33143:91;33192:41;33216:16;33192:41;:::i;:::-;33184:6;33177:4;33171:11;33143:91;:::i;:::-;33137:4;33130:105;33048:193;32972:269;;;:::o;33247:73::-;33292:3;33313:1;33306:8;;33247:73;:::o;33326:189::-;33403:32;;:::i;:::-;33444:65;33502:6;33494;33488:4;33444:65;:::i;:::-;33379:136;33326:189;;:::o;33521:214::-;33606:1;33591:138;33616:9;33613:1;33610:16;33591:138;;;33668:51;33717:1;33713;33702:9;33698:17;33668:51;:::i;:::-;33641:1;33638;33634:9;33629:14;;33591:138;;;33595:14;33521:214;;:::o;33741:746::-;33842:2;33837:3;33834:11;33831:649;;;33871:10;33866:3;33863:19;33860:610;;;33917:38;33949:5;33917:38;:::i;:::-;33992:22;34010:3;33992:22;:::i;:::-;34051:29;34069:10;34051:29;:::i;:::-;34241:2;34229:10;34226:18;34223:79;;;34283:1;34267:17;;34223:79;34352:12;34342:8;34338:27;34382:74;34442:12;34428;34424:31;34411:11;34382:74;:::i;:::-;33883:587;;;;33860:610;33831:649;33741:746;;;:::o;34493:117::-;34547:8;34597:5;34591:4;34587:16;34566:37;;34493:117;;;;:::o;34616:169::-;34660:6;34693:51;34741:1;34737:6;34729:5;34726:1;34722:13;34693:51;:::i;:::-;34689:56;34774:4;34768;34764:15;34754:25;;34667:118;34616:169;;;;:::o;34790:295::-;34866:4;35012:29;35037:3;35031:4;35012:29;:::i;:::-;35004:37;;35074:3;35071:1;35067:11;35061:4;35058:21;35050:29;;34790:295;;;;:::o;35090:1395::-;35207:37;35240:3;35207:37;:::i;:::-;35309:18;35301:6;35298:30;35295:56;;;35331:18;;:::i;:::-;35295:56;35375:38;35407:4;35401:11;35375:38;:::i;:::-;35460:67;35520:6;35512;35506:4;35460:67;:::i;:::-;35554:1;35578:4;35565:17;;35610:2;35602:6;35599:14;35627:1;35622:618;;;;36284:1;36301:6;36298:77;;;36350:9;36345:3;36341:19;36335:26;36326:35;;36298:77;36401:67;36461:6;36454:5;36401:67;:::i;:::-;36395:4;36388:81;36257:222;35592:887;;35622:618;35674:4;35670:9;35662:6;35658:22;35708:37;35740:4;35708:37;:::i;:::-;35767:1;35781:208;35795:7;35792:1;35789:14;35781:208;;;35874:9;35869:3;35865:19;35859:26;35851:6;35844:42;35925:1;35917:6;35913:14;35903:24;;35972:2;35961:9;35957:18;35944:31;;35818:4;35815:1;35811:12;35806:17;;35781:208;;;36017:6;36008:7;36005:19;36002:179;;;36075:9;36070:3;36066:19;36060:26;36118:48;36160:4;36152:6;36148:17;36137:9;36118:48;:::i;:::-;36110:6;36103:64;36025:156;36002:179;36227:1;36223;36215:6;36211:14;36207:22;36201:4;36194:36;35629:611;;;35592:887;;35182:1303;;;35090:1395;;:::o;36491:148::-;36589:6;36584:3;36579;36566:30;36630:1;36621:6;36616:3;36612:16;36605:27;36491:148;;;:::o;36669:317::-;36767:3;36788:71;36852:6;36847:3;36788:71;:::i;:::-;36781:78;;36869:56;36918:6;36913:3;36906:5;36869:56;:::i;:::-;36950:29;36972:6;36950:29;:::i;:::-;36945:3;36941:39;36934:46;;36669:317;;;;;:::o;36992:553::-;37171:4;37209:2;37198:9;37194:18;37186:26;;37222:71;37290:1;37279:9;37275:17;37266:6;37222:71;:::i;:::-;37303:72;37371:2;37360:9;37356:18;37347:6;37303:72;:::i;:::-;37422:9;37416:4;37412:20;37407:2;37396:9;37392:18;37385:48;37450:88;37533:4;37524:6;37516;37450:88;:::i;:::-;37442:96;;36992:553;;;;;;;:::o;37551:174::-;37691:26;37687:1;37679:6;37675:14;37668:50;37551:174;:::o;37731:366::-;37873:3;37894:67;37958:2;37953:3;37894:67;:::i;:::-;37887:74;;37970:93;38059:3;37970:93;:::i;:::-;38088:2;38083:3;38079:12;38072:19;;37731:366;;;:::o;38103:419::-;38269:4;38307:2;38296:9;38292:18;38284:26;;38356:9;38350:4;38346:20;38342:1;38331:9;38327:17;38320:47;38384:131;38510:4;38384:131;:::i;:::-;38376:139;;38103:419;;;:::o;38528:170::-;38668:22;38664:1;38656:6;38652:14;38645:46;38528:170;:::o;38704:366::-;38846:3;38867:67;38931:2;38926:3;38867:67;:::i;:::-;38860:74;;38943:93;39032:3;38943:93;:::i;:::-;39061:2;39056:3;39052:12;39045:19;;38704:366;;;:::o;39076:419::-;39242:4;39280:2;39269:9;39265:18;39257:26;;39329:9;39323:4;39319:20;39315:1;39304:9;39300:17;39293:47;39357:131;39483:4;39357:131;:::i;:::-;39349:139;;39076:419;;;:::o;39501:171::-;39540:3;39563:24;39581:5;39563:24;:::i;:::-;39554:33;;39609:4;39602:5;39599:15;39596:41;;39617:18;;:::i;:::-;39596:41;39664:1;39657:5;39653:13;39646:20;;39501:171;;;:::o;39678:117::-;39787:1;39784;39777:12;39801:117;39910:1;39907;39900:12;39924:469;40029:9;40040;40078:8;40066:10;40063:24;40060:111;;;40090:79;;:::i;:::-;40060:111;40196:6;40186:8;40183:20;40180:107;;;40206:79;;:::i;:::-;40180:107;40337:1;40325:10;40321:18;40313:6;40309:31;40296:44;;40376:10;40366:8;40362:25;40349:38;;39924:469;;;;;;;:::o;40399:96::-;40457:6;40485:3;40475:13;;40399:96;;;;:::o;40593:150::-;40630:7;40670:66;40663:5;40659:78;40648:89;;40593:150;;;:::o;40749:552::-;40840:5;40871:45;40912:3;40905:5;40871:45;:::i;:::-;40941:5;40965:41;40996:8;40983:22;40965:41;:::i;:::-;40956:50;;41030:2;41022:6;41019:14;41016:278;;;41101:169;41186:66;41156:6;41152:2;41148:15;41145:1;41141:23;41101:169;:::i;:::-;41078:5;41057:227;41048:236;;41016:278;40846:455;;40749:552;;;;:::o",
+                             "linkReferences":  {
+
+                                                },
+                             "immutableReferences":  {
+                                                         "40539":  [
+                                                                       {
+                                                                           "start":  3394,
+                                                                           "length":  32
+                                                                       }
+                                                                   ]
+                                                     }
+                         },
+    "methodIdentifiers":  {
+                              "EXECUTION_DELAY()":  "37f135d7",
+                              "MINIMUM_BALANCE()":  "53498cdd",
+                              "PROPOSAL_THRESHOLD_BPS()":  "a7d54d3f",
+                              "balances(address)":  "27e235e3",
+                              "canExecute(uint256)":  "cc63604a",
+                              "changeVote(uint256,uint8)":  "f9a43b2d",
+                              "createProposal(address,uint256,uint256,string)":  "a0a2bf67",
+                              "deposit()":  "d0e30db0",
+                              "executeProposal(uint256)":  "0d61b519",
+                              "getProposal(uint256)":  "c7f758a8",
+                              "getProposalState(uint256)":  "9080936f",
+                              "getUserBalance(address)":  "47734892",
+                              "hasVoted(uint256,address)":  "43859632",
+                              "isTrustedForwarder(address)":  "572b6c05",
+                              "proposalCount()":  "da35c664",
+                              "proposals(uint256)":  "013cf08b",
+                              "totalDeposited()":  "ff50abdc",
+                              "trustedForwarder()":  "7da0a877",
+                              "vote(uint256,uint8)":  "943e8216",
+                              "votes(uint256,address)":  "d23254b4",
+                              "withdraw(uint256)":  "2e1a7d4d"
+                          },
+    "rawMetadata":  "{\"compiler\":{\"version\":\"0.8.33+commit.64118f21\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"trustedForwarder\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Deposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"proposer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"}],\"name\":\"ProposalCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"ProposalExecuted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"voter\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enum DAOVoting.VoteType\",\"name\":\"voteType\",\"type\":\"uint8\"}],\"name\":\"Voted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"EXECUTION_DELAY\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINIMUM_BALANCE\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PROPOSAL_THRESHOLD_BPS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balances\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"canExecute\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"},{\"internalType\":\"enum DAOVoting.VoteType\",\"name\":\"newVoteType\",\"type\":\"uint8\"}],\"name\":\"changeVote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"votingDuration\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"}],\"name\":\"createProposal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"executeProposal\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"getProposal\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"votingDeadline\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"executionDelay\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"forVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"againstVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"abstainVotes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"executed\",\"type\":\"bool\"}],\"internalType\":\"struct DAOVoting.Proposal\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"}],\"name\":\"getProposalState\",\"outputs\":[{\"internalType\":\"enum DAOVoting.ProposalState\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getUserBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"hasVoted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proposalCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"proposals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"votingDeadline\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"executionDelay\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"forVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"againstVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"abstainVotes\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"executed\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalDeposited\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"trustedForwarder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"proposalId\",\"type\":\"uint256\"},{\"internalType\":\"enum DAOVoting.VoteType\",\"name\":\"voteType\",\"type\":\"uint8\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"votes\",\"outputs\":[{\"internalType\":\"enum DAOVoting.VoteType\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"isTrustedForwarder(address)\":{\"details\":\"Indicates whether any particular address is the trusted forwarder.\"},\"trustedForwarder()\":{\"details\":\"Returns the address of the trusted forwarder.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/DAOVoting.sol\":\"DAOVoting\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":halmos-cheatcodes/=lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/metatx/ERC2771Context.sol\":{\"keccak256\":\"0x9695d220b99dcf62910533bdf5d40d4cf6a4e04d5b106b6803a80586486dc7f7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://83b7aecd65882d8953643dce144efe91367082cc01830c9c4ed3c8a4837fb558\",\"dweb:/ipfs/QmQ5HxGavcCKjuhd8buv177qjG6A4kvxx4pZviceKdspdM\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"src/DAOVoting.sol\":{\"keccak256\":\"0x638be7736299b7d70a4274f315a3f2959c123b155662be3decca6216ed69de26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8e238209a17b4b9b7d44e66efa7cf9b54e263d444a15763185000b1b9b81f3d8\",\"dweb:/ipfs/QmR4ekFg6pGPEfGYqp3Wobu6RvYgdyqaPWbXrHswmUpU8t\"]}},\"version\":1}",
+    "metadata":  {
+                     "compiler":  {
+                                      "version":  "0.8.33+commit.64118f21"
+                                  },
+                     "language":  "Solidity",
+                     "output":  {
+                                    "abi":  [
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "trustedForwarder",
+                                                                       "type":  "address"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "nonpayable",
+                                                    "type":  "constructor"
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "user",
+                                                                       "type":  "address",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "amount",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  false
+                                                                   }
+                                                               ],
+                                                    "type":  "event",
+                                                    "name":  "Deposited",
+                                                    "anonymous":  false
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "id",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "proposer",
+                                                                       "type":  "address",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "recipient",
+                                                                       "type":  "address",
+                                                                       "indexed":  false
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "amount",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  false
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "string",
+                                                                       "name":  "description",
+                                                                       "type":  "string",
+                                                                       "indexed":  false
+                                                                   }
+                                                               ],
+                                                    "type":  "event",
+                                                    "name":  "ProposalCreated",
+                                                    "anonymous":  false
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "id",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "recipient",
+                                                                       "type":  "address",
+                                                                       "indexed":  false
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "amount",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  false
+                                                                   }
+                                                               ],
+                                                    "type":  "event",
+                                                    "name":  "ProposalExecuted",
+                                                    "anonymous":  false
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "voter",
+                                                                       "type":  "address",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "enum DAOVoting.VoteType",
+                                                                       "name":  "voteType",
+                                                                       "type":  "uint8",
+                                                                       "indexed":  false
+                                                                   }
+                                                               ],
+                                                    "type":  "event",
+                                                    "name":  "Voted",
+                                                    "anonymous":  false
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "user",
+                                                                       "type":  "address",
+                                                                       "indexed":  true
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "amount",
+                                                                       "type":  "uint256",
+                                                                       "indexed":  false
+                                                                   }
+                                                               ],
+                                                    "type":  "event",
+                                                    "name":  "Withdrawn",
+                                                    "anonymous":  false
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "EXECUTION_DELAY",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "MINIMUM_BALANCE",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "PROPOSAL_THRESHOLD_BPS",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "",
+                                                                       "type":  "address"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "balances",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "canExecute",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "bool",
+                                                                        "name":  "",
+                                                                        "type":  "bool"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "enum DAOVoting.VoteType",
+                                                                       "name":  "newVoteType",
+                                                                       "type":  "uint8"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "nonpayable",
+                                                    "type":  "function",
+                                                    "name":  "changeVote"
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "recipient",
+                                                                       "type":  "address"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "amount",
+                                                                       "type":  "uint256"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "votingDuration",
+                                                                       "type":  "uint256"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "string",
+                                                                       "name":  "description",
+                                                                       "type":  "string"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "nonpayable",
+                                                    "type":  "function",
+                                                    "name":  "createProposal",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "payable",
+                                                    "type":  "function",
+                                                    "name": "fundDAO"
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "nonpayable",
+                                                    "type":  "function",
+                                                    "name":  "executeProposal"
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "getProposal",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "struct DAOVoting.Proposal",
+                                                                        "name":  "",
+                                                                        "type":  "tuple",
+                                                                        "components":  [
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "id",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "address",
+                                                                                               "name":  "recipient",
+                                                                                               "type":  "address"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "amount",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "string",
+                                                                                               "name":  "description",
+                                                                                               "type":  "string"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "votingDeadline",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "executionDelay",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "forVotes",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "againstVotes",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "uint256",
+                                                                                               "name":  "abstainVotes",
+                                                                                               "type":  "uint256"
+                                                                                           },
+                                                                                           {
+                                                                                               "internalType":  "bool",
+                                                                                               "name":  "executed",
+                                                                                               "type":  "bool"
+                                                                                           }
+                                                                                       ]
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "getProposalState",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "enum DAOVoting.ProposalState",
+                                                                        "name":  "",
+                                                                        "type":  "uint8"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "user",
+                                                                       "type":  "address"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "getUserBalance",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "",
+                                                                       "type":  "uint256"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "",
+                                                                       "type":  "address"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "hasVoted",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "bool",
+                                                                        "name":  "",
+                                                                        "type":  "bool"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "forwarder",
+                                                                       "type":  "address"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "isTrustedForwarder",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "bool",
+                                                                        "name":  "",
+                                                                        "type":  "bool"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "proposalCount",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "",
+                                                                       "type":  "uint256"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "proposals",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "id",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "address",
+                                                                        "name":  "recipient",
+                                                                        "type":  "address"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "amount",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "string",
+                                                                        "name":  "description",
+                                                                        "type":  "string"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "votingDeadline",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "executionDelay",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "forVotes",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "againstVotes",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "abstainVotes",
+                                                                        "type":  "uint256"
+                                                                    },
+                                                                    {
+                                                                        "internalType":  "bool",
+                                                                        "name":  "executed",
+                                                                        "type":  "bool"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "totalDeposited",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "uint256",
+                                                                        "name":  "",
+                                                                        "type":  "uint256"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "trustedForwarder",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "address",
+                                                                        "name":  "",
+                                                                        "type":  "address"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "proposalId",
+                                                                       "type":  "uint256"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "enum DAOVoting.VoteType",
+                                                                       "name":  "voteType",
+                                                                       "type":  "uint8"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "nonpayable",
+                                                    "type":  "function",
+                                                    "name":  "vote"
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "",
+                                                                       "type":  "uint256"
+                                                                   },
+                                                                   {
+                                                                       "internalType":  "address",
+                                                                       "name":  "",
+                                                                       "type":  "address"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "view",
+                                                    "type":  "function",
+                                                    "name":  "votes",
+                                                    "outputs":  [
+                                                                    {
+                                                                        "internalType":  "enum DAOVoting.VoteType",
+                                                                        "name":  "",
+                                                                        "type":  "uint8"
+                                                                    }
+                                                                ]
+                                                },
+                                                {
+                                                    "inputs":  [
+                                                                   {
+                                                                       "internalType":  "uint256",
+                                                                       "name":  "amount",
+                                                                       "type":  "uint256"
+                                                                   }
+                                                               ],
+                                                    "stateMutability":  "nonpayable",
+                                                    "type":  "function",
+                                                    "name":  "withdraw"
+                                                },
+                                                {
+                                                    "inputs":  [
+
+                                                               ],
+                                                    "stateMutability":  "payable",
+                                                    "type":  "receive"
+                                                }
+                                            ],
+                                    "devdoc":  {
+                                                   "kind":  "dev",
+                                                   "methods":  {
+                                                                   "isTrustedForwarder(address)":  {
+                                                                                                       "details":  "Indicates whether any particular address is the trusted forwarder."
+                                                                                                   },
+                                                                   "trustedForwarder()":  {
+                                                                                              "details":  "Returns the address of the trusted forwarder."
+                                                                                          }
+                                                               },
+                                                   "version":  1
+                                               },
+                                    "userdoc":  {
+                                                    "kind":  "user",
+                                                    "methods":  {
+
+                                                                },
+                                                    "version":  1
+                                                }
+                                },
+                     "settings":  {
+                                      "remappings":  [
+                                                         "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+                                                         "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+                                                         "forge-std/=lib/forge-std/src/",
+                                                         "halmos-cheatcodes/=lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/",
+                                                         "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+                                                     ],
+                                      "optimizer":  {
+                                                        "enabled":  false,
+                                                        "runs":  200
+                                                    },
+                                      "metadata":  {
+                                                       "bytecodeHash":  "ipfs"
+                                                   },
+                                      "compilationTarget":  {
+                                                                "src/DAOVoting.sol":  "DAOVoting"
+                                                            },
+                                      "evmVersion":  "prague",
+                                      "libraries":  {
+
+                                                    }
+                                  },
+                     "sources":  {
+                                     "lib/openzeppelin-contracts/contracts/metatx/ERC2771Context.sol":  {
+                                                                                                            "keccak256":  "0x9695d220b99dcf62910533bdf5d40d4cf6a4e04d5b106b6803a80586486dc7f7",
+                                                                                                            "urls":  [
+                                                                                                                         "bzz-raw://83b7aecd65882d8953643dce144efe91367082cc01830c9c4ed3c8a4837fb558",
+                                                                                                                         "dweb:/ipfs/QmQ5HxGavcCKjuhd8buv177qjG6A4kvxx4pZviceKdspdM"
+                                                                                                                     ],
+                                                                                                            "license":  "MIT"
+                                                                                                        },
+                                     "lib/openzeppelin-contracts/contracts/utils/Context.sol":  {
+                                                                                                    "keccak256":  "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+                                                                                                    "urls":  [
+                                                                                                                 "bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+                                                                                                                 "dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+                                                                                                             ],
+                                                                                                    "license":  "MIT"
+                                                                                                },
+                                     "src/DAOVoting.sol":  {
+                                                               "keccak256":  "0x638be7736299b7d70a4274f315a3f2959c123b155662be3decca6216ed69de26",
+                                                               "urls":  [
+                                                                            "bzz-raw://8e238209a17b4b9b7d44e66efa7cf9b54e263d444a15763185000b1b9b81f3d8",
+                                                                            "dweb:/ipfs/QmR4ekFg6pGPEfGYqp3Wobu6RvYgdyqaPWbXrHswmUpU8t"
+                                                                        ],
+                                                               "license":  "MIT"
+                                                           }
+                                 },
+                     "version":  1
+                 },
+    "id":  24
+}
