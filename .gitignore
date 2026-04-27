@@ -67,7 +67,7 @@ desktop.ini
 .claude/
 
 # ============================================================
-# LOGS & TEMP
+# OTROS
 # ============================================================
 *.log
 logs/
@@ -82,3 +82,6 @@ webDAO/SETUP.md
 CLAUDE.md
 project-rules.md
 faltante.md
+package-lock.json
+package.json
+diagrams/creacion-diagramas/
